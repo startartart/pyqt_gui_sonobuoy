@@ -75,14 +75,20 @@ class MainWindow(QMainWindow):
         # ///////////////////////////////////////////////////////////////
 
         # LEFT MENUS
-        widgets.btn_setting.clicked.connect(self.buttonClick)
-        widgets.btn_widgets.clicked.connect(self.buttonClick)
-        widgets.btn_map.clicked.connect(self.buttonClick)
-        widgets.btn_kill.clicked.connect(self.buttonClick)
-        widgets.settingBtn.clicked.connect(self.buttonClick)
-        widgets.sendBtn.clicked.connect(self.buttonClick)
-        widgets.btn_information.clicked.connect(self.buttonClick)
+        widgets.btn_setting.clicked.connect(self.buttonClick) # param setting layout
+        widgets.btn_map.clicked.connect(self.buttonClick) # map layout
+        widgets.btn_information.clicked.connect(self.buttonClick) # wav, graph layout
 
+        widgets.btn_widgets.clicked.connect(self.buttonClick) # 라벨 생성
+        widgets.btn_kill.clicked.connect(self.buttonClick) # 라벨 지우기
+
+        widgets.settingBtn.clicked.connect(self.buttonClick) # 좌표 이동
+        widgets.sendBtn.clicked.connect(self.buttonClick) # 파라미터 전송
+
+        widgets.txBtn.clicked.connect(self.buttonClick) # tx 라벨 생성
+        widgets.rxBtn.clicked.connect(self.buttonClick) # rx 라벨 생성
+        widgets.targetBtn.clicked.connect(self.buttonClick) # target 라벨 생성
+        
         # EXTRA LEFT BOX
         def openCloseLeftBox():
             UIFunctions.toggleLeftBox(self, True)
@@ -115,7 +121,6 @@ class MainWindow(QMainWindow):
         widgets.stackedWidget.setCurrentWidget(widgets.home)
         widgets.btn_map.setStyleSheet(UIFunctions.selectMenu(widgets.btn_map.styleSheet()))
 
-
     # BUTTONS CLICK
     # Post here your functions for clicked buttons
     # ///////////////////////////////////////////////////////////////
@@ -130,20 +135,10 @@ class MainWindow(QMainWindow):
             UIFunctions.resetStyle(self, btnName)
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
 
-            self.frimestate = 0
-            widgets.btn_widgets.setStyleSheet("background-image: url(:/icons/images/icons/cil-wifi-signal-off.png);")
-            widgets.btn_widgets.setDisabled(True)
-            if self.txSave:
-                self.txSave['label'].setHidden(True)
-            if self.rxSave:
-                self.rxSave['label'].setHidden(True)
-            if self.targetSave:
-                self.targetSave['label'].setHidden(True)
+            self.labelSetHidden()
 
-        
         # 맵 좌표 이동시키기 - stack 1 function 1
         if btnName == "settingBtn":
-
             BASE_URL = 'https://maps.googleapis.com/maps/api/staticmap?'
             API_KEY  = 'AIzaSyCHWLALETpUW1cVZhMG5Z_1LKS86DpcvI8'
             POS = widgets.areaEdit.text() + ',' + widgets.areaEdit_2.text()
@@ -161,9 +156,49 @@ class MainWindow(QMainWindow):
             widgets.label.setPixmap(QPixmap("./images/images/picture2.png"))
             widgets.currentArea.setText('현재 좌표 : (' + widgets.areaEdit.text() + ',' + widgets.areaEdit_2.text() + ')')
 
-        # 파라미터 보내기 - stack 1 function 2
+        # tx, rx, target 파라미터 전송 - stack 1 function 2
+        if btnName == "txBtn":
+            if self.txSave:
+                self.txSave['label'].close()
+                self.txSave.clear()
+
+            self.label = QLabel(self)
+            self.label.setGeometry(int(widgets.txXEdit.text()), int(widgets.txYEdit.text()), 16, 16)
+            pixmap = QPixmap("./images/icons/cil-cursor.png")
+            self.label.setPixmap(pixmap)
+            self.txSave = {'label':self.label, 'posX':int(widgets.txXEdit.text()), 'posY':int(widgets.txYEdit.text())}
+            self.label.show()
+            self.label.close()
+
+        if btnName == "rxBtn":
+            if self.rxSave:
+                self.rxSave['label'].close()
+                self.rxSave.clear()
+
+            self.label = QLabel(self)
+            self.label.setGeometry(int(widgets.rxXEdit.text()), int(widgets.rxYEdit.text()), 16, 16)
+            pixmap = QPixmap("./images/icons/cil-wifi-signal-4.png")
+            self.label.setPixmap(pixmap)
+            self.rxSave = {'label':self.label, 'posX':int(widgets.rxXEdit.text()), 'posY':int(widgets.rxYEdit.text())}
+            self.label.show()
+            self.label.close()
+
+        if btnName == "targetBtn":
+            if self.targetSave:
+                self.targetSave['label'].close()
+                self.targetSave.clear()
+
+            self.label = QLabel(self)
+            self.label.setGeometry(int(widgets.targetXEdit.text()), int(widgets.targetYEdit.text()), 16, 16)
+            pixmap = QPixmap("./images/icons/cil-wifi-signal-0.png")
+            self.label.setPixmap(pixmap)
+            self.targetSave = {'label':self.label, 'posX':int(widgets.targetXEdit.text()), 'posY':int(widgets.targetYEdit.text())}
+            self.label.show()
+            self.label.close()
+        # 파라미터 보내기 - stack 1 function 3
         if btnName == "sendBtn":
-            print("sendBtn")
+            self.paramList = {'depth': widgets.depthEdit.text(), 'txX': widgets.txXEdit.text(), 'txY': widgets.txYEdit.text(), 'txZ': widgets.txZEdit.text(), 'rxX': widgets.rxXEdit.text(), 'rxY': widgets.rxYEdit.text(), 'rxZ': widgets.rxZEdit.text(), 'targetX': widgets.targetXEdit.text(), 'targetY': widgets.targetYEdit.text(), 'targetZ': widgets.targetZEdit.text(), 'waveType': widgets.waveTypeEdit.text(), 'cycle': widgets.cycleEdit.text(), 'centerFreq': widgets.centerFreqEdit.text(), 'bandwidth': widgets.bandwidthEdit.text()}
+            print(self.paramList)
 
         # 맵 페이지 - stack 2
         if btnName == "btn_map":
@@ -205,11 +240,28 @@ class MainWindow(QMainWindow):
 
         # 오디오 파일 및 그래프 변환 - stack 3
         if btnName == "btn_information":
-            print("btn_information")
-
+            widgets.stackedWidget.setCurrentWidget(widgets.show)
+            UIFunctions.resetStyle(self, btnName)
+            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
+            widgets.btn_information.setEnabled(True)
+            
+            self.labelSetHidden()
 
         # PRINT BTN NAME
         print(f'Button "{btnName}" pressed!')
+    
+    # 화면 전환시 라벨 숨기기
+    def labelSetHidden(self):
+        self.frimestate = 0
+        widgets.btn_widgets.setStyleSheet("background-image: url(:/icons/images/icons/cil-wifi-signal-off.png);")
+        widgets.btn_widgets.setDisabled(True)
+
+        if self.txSave:
+            self.txSave['label'].setHidden(True)
+        if self.rxSave:
+            self.rxSave['label'].setHidden(True)
+        if self.targetSave:
+            self.targetSave['label'].setHidden(True)
 
     def mouseMoveEvent(self, event):
         # MOVE WINDOW
@@ -243,6 +295,7 @@ class MainWindow(QMainWindow):
             self.label.setPixmap(pixmap)
             self.label.show()
             self.txSave = {'label':self.label, 'posX':event.pos().x(), 'posY':event.pos().y()}
+            print(self.txSave)
             widgets.txXEdit.setText(str(event.pos().x()))
             widgets.txYEdit.setText(str(event.pos().y()))
         

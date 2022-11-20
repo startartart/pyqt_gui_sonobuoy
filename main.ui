@@ -2469,7 +2469,7 @@ background-repeat: no-repeat;
                             </widget>
                            </item>
                            <item row="4" column="4">
-                            <widget class="QPushButton" name="targetEdit">
+                            <widget class="QPushButton" name="targetBtn">
                              <property name="minimumSize">
                               <size>
                                <width>150</width>

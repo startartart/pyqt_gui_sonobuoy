@@ -1278,15 +1278,15 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.cycleEdit, 5, 1, 1, 1, Qt.AlignHCenter)
 
-        self.targetEdit = QPushButton(self.widget)
-        self.targetEdit.setObjectName(u"targetEdit")
-        self.targetEdit.setMinimumSize(QSize(150, 30))
-        self.targetEdit.setFont(font)
-        self.targetEdit.setCursor(QCursor(Qt.PointingHandCursor))
-        self.targetEdit.setStyleSheet(u"background-color: rgb(52, 59, 72);")
-        self.targetEdit.setIcon(icon3)
+        self.targetBtn = QPushButton(self.widget)
+        self.targetBtn.setObjectName(u"targetBtn")
+        self.targetBtn.setMinimumSize(QSize(150, 30))
+        self.targetBtn.setFont(font)
+        self.targetBtn.setCursor(QCursor(Qt.PointingHandCursor))
+        self.targetBtn.setStyleSheet(u"background-color: rgb(52, 59, 72);")
+        self.targetBtn.setIcon(icon3)
 
-        self.gridLayout_2.addWidget(self.targetEdit, 4, 4, 1, 1)
+        self.gridLayout_2.addWidget(self.targetBtn, 4, 4, 1, 1)
 
         self.waveTypeEdit = QLineEdit(self.widget)
         self.waveTypeEdit.setObjectName(u"waveTypeEdit")
@@ -1558,7 +1558,7 @@ class Ui_MainWindow(object):
         self.centerFreqEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"\uc911\uc2ec\uc8fc\ud30c\uc218", None))
         self.cycleEdit.setText("")
         self.cycleEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"\uc8fc\uae30", None))
-        self.targetEdit.setText(QCoreApplication.translate("MainWindow", u"TARGET \ud0c0\ucf13 \uc704\uce58", None))
+        self.targetBtn.setText(QCoreApplication.translate("MainWindow", u"TARGET \ud0c0\ucf13 \uc704\uce58", None))
         self.waveTypeEdit.setText("")
         self.waveTypeEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"\ud30c\ud615\uc885\ub958", None))
         self.labelBoxBlenderInstalation_2.setText(QCoreApplication.translate("MainWindow", u"\ud30c\ub77c\ubbf8\ud130 \uc785\ub825 \uc804\uc1a1", None))

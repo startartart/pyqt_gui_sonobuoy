@@ -80,6 +80,8 @@ class MainWindow(QMainWindow):
         widgets.btn_map.clicked.connect(self.buttonClick)
         widgets.btn_kill.clicked.connect(self.buttonClick)
         widgets.settingBtn.clicked.connect(self.buttonClick)
+        widgets.sendBtn.clicked.connect(self.buttonClick)
+        widgets.btn_information.clicked.connect(self.buttonClick)
 
         # EXTRA LEFT BOX
         def openCloseLeftBox():
@@ -122,7 +124,7 @@ class MainWindow(QMainWindow):
         btn = self.sender()
         btnName = btn.objectName()
 
-        # 설정 페이지
+        # 설정 페이지 - stack 1
         if btnName == "btn_setting":
             widgets.stackedWidget.setCurrentWidget(widgets.widgets)
             UIFunctions.resetStyle(self, btnName)
@@ -138,45 +140,8 @@ class MainWindow(QMainWindow):
             if self.targetSave:
                 self.targetSave['label'].setHidden(True)
 
-        # 맵 페이지
-        if btnName == "btn_map":
-            widgets.stackedWidget.setCurrentWidget(widgets.new_page) # SET PAGE
-            UIFunctions.resetStyle(self, btnName) # RESET ANOTHERS BUTTONS SELECTED
-            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet())) # SELECT MENU
-            widgets.btn_widgets.setEnabled(True)
-            if self.txSave:
-                self.txSave['label'].setHidden(False)
-            if self.rxSave:
-                self.rxSave['label'].setHidden(False)
-            if self.targetSave:
-                self.targetSave['label'].setHidden(False)
-
-        # 맵 페이지에 아이콘라벨 입히기
-        if btnName == "btn_widgets":
-            if self.frimestate == 1:
-                self.frimestate = 0
-                widgets.btn_widgets.setStyleSheet("background-image: url(:/icons/images/icons/cil-wifi-signal-off.png);")
-                
-            else:
-                self.frimestate = 1
-                widgets.btn_widgets.setStyleSheet("background-image: url(:/icons/images/icons/cil-wifi-signal-0.png);")
-                if self.txSave:
-                    self.txSave['label'].setHidden(False)
-                if self.rxSave:
-                    self.rxSave['label'].setHidden(False)
-                if self.targetSave:
-                    self.targetSave['label'].setHidden(False)
-
-        # 아이콘라벨 모두 죽이기
-        if btnName == "btn_kill":
-            self.txSave['label'].close()
-            self.rxSave['label'].close()
-            self.targetSave['label'].close()
-            self.txSave.clear()
-            self.rxSave.clear()
-            self.targetSave.clear()
-
-        # 맵 좌표 이동시키기
+        
+        # 맵 좌표 이동시키기 - stack 1 function 1
         if btnName == "settingBtn":
 
             BASE_URL = 'https://maps.googleapis.com/maps/api/staticmap?'
@@ -195,6 +160,53 @@ class MainWindow(QMainWindow):
             file.close()
             widgets.label.setPixmap(QPixmap("./images/images/picture2.png"))
             widgets.currentArea.setText('현재 좌표 : (' + widgets.areaEdit.text() + ',' + widgets.areaEdit_2.text() + ')')
+
+        # 파라미터 보내기 - stack 1 function 2
+        if btnName == "sendBtn":
+            print("sendBtn")
+
+        # 맵 페이지 - stack 2
+        if btnName == "btn_map":
+            widgets.stackedWidget.setCurrentWidget(widgets.new_page) # SET PAGE
+            UIFunctions.resetStyle(self, btnName) # RESET ANOTHERS BUTTONS SELECTED
+            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet())) # SELECT MENU
+            widgets.btn_widgets.setEnabled(True)
+            if self.txSave:
+                self.txSave['label'].setHidden(False)
+            if self.rxSave:
+                self.rxSave['label'].setHidden(False)
+            if self.targetSave:
+                self.targetSave['label'].setHidden(False)
+
+        # 맵 페이지에 아이콘라벨 입히기 - stack 2 function 1
+        if btnName == "btn_widgets":
+            if self.frimestate == 1:
+                self.frimestate = 0
+                widgets.btn_widgets.setStyleSheet("background-image: url(:/icons/images/icons/cil-wifi-signal-off.png);")
+                
+            else:
+                self.frimestate = 1
+                widgets.btn_widgets.setStyleSheet("background-image: url(:/icons/images/icons/cil-wifi-signal-0.png);")
+                if self.txSave:
+                    self.txSave['label'].setHidden(False)
+                if self.rxSave:
+                    self.rxSave['label'].setHidden(False)
+                if self.targetSave:
+                    self.targetSave['label'].setHidden(False)
+
+        # 아이콘라벨 모두 죽이기 - stack 2 function 2
+        if btnName == "btn_kill":
+            self.txSave['label'].close()
+            self.rxSave['label'].close()
+            self.targetSave['label'].close()
+            self.txSave.clear()
+            self.rxSave.clear()
+            self.targetSave.clear()
+
+        # 오디오 파일 및 그래프 변환 - stack 3
+        if btnName == "btn_information":
+            print("btn_information")
+
 
         # PRINT BTN NAME
         print(f'Button "{btnName}" pressed!')

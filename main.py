@@ -44,6 +44,7 @@ class MainWindow(QMainWindow):
         self.txSave = {}
         self.rxSave = {}
         self.targetSave = {}
+        widgets.currentArea.setText('현재 좌표 : (37.5666805, 126.9784147 )')
 
         widgets.label.setPixmap(QPixmap("./images/images/picture.png"))
 
@@ -75,19 +76,18 @@ class MainWindow(QMainWindow):
         # ///////////////////////////////////////////////////////////////
 
         # LEFT MENUS
-        widgets.btn_setting.clicked.connect(self.buttonClick) # param setting layout
-        widgets.btn_map.clicked.connect(self.buttonClick) # map layout
-        widgets.btn_information.clicked.connect(self.buttonClick) # wav, graph layout
+        widgets.btn_setting.clicked.connect(self.buttonClick) # param setting layout - stack1
+        widgets.settingBtn.clicked.connect(self.buttonClick) # 좌표 이동 - function1
+        widgets.txBtn.clicked.connect(self.buttonClick) # tx 라벨 생성 - function2
+        widgets.rxBtn.clicked.connect(self.buttonClick) # rx 라벨 생성 - function2
+        widgets.targetBtn.clicked.connect(self.buttonClick) # target 라벨 생성 - function2
+        widgets.sendBtn.clicked.connect(self.buttonClick) # 파라미터 전송 - function3
 
-        widgets.btn_widgets.clicked.connect(self.buttonClick) # 라벨 생성
-        widgets.btn_kill.clicked.connect(self.buttonClick) # 라벨 지우기
+        widgets.btn_map.clicked.connect(self.buttonClick) # map layout - stack2
+        widgets.btn_widgets.clicked.connect(self.buttonClick) # 라벨 생성 - function1
+        widgets.btn_kill.clicked.connect(self.buttonClick) # 라벨 지우기 - function2
 
-        widgets.settingBtn.clicked.connect(self.buttonClick) # 좌표 이동
-        widgets.sendBtn.clicked.connect(self.buttonClick) # 파라미터 전송
-
-        widgets.txBtn.clicked.connect(self.buttonClick) # tx 라벨 생성
-        widgets.rxBtn.clicked.connect(self.buttonClick) # rx 라벨 생성
-        widgets.targetBtn.clicked.connect(self.buttonClick) # target 라벨 생성
+        widgets.btn_information.clicked.connect(self.buttonClick) # wav, graph layout - stack3
         
         # EXTRA LEFT BOX
         def openCloseLeftBox():
@@ -156,7 +156,7 @@ class MainWindow(QMainWindow):
             widgets.label.setPixmap(QPixmap("./images/images/picture2.png"))
             widgets.currentArea.setText('현재 좌표 : (' + widgets.areaEdit.text() + ',' + widgets.areaEdit_2.text() + ')')
 
-        # tx, rx, target 파라미터 전송 - stack 1 function 2
+        # tx, rx, target 파라미터 전송과 맵 표시 - stack 1 function 2
         if btnName == "txBtn":
             if self.txSave:
                 self.txSave['label'].close()
@@ -195,6 +195,7 @@ class MainWindow(QMainWindow):
             self.targetSave = {'label':self.label, 'posX':int(widgets.targetXEdit.text()), 'posY':int(widgets.targetYEdit.text())}
             self.label.show()
             self.label.close()
+
         # 파라미터 보내기 - stack 1 function 3
         if btnName == "sendBtn":
             self.paramList = {'depth': widgets.depthEdit.text(), 'txX': widgets.txXEdit.text(), 'txY': widgets.txYEdit.text(), 'txZ': widgets.txZEdit.text(), 'rxX': widgets.rxXEdit.text(), 'rxY': widgets.rxYEdit.text(), 'rxZ': widgets.rxZEdit.text(), 'targetX': widgets.targetXEdit.text(), 'targetY': widgets.targetYEdit.text(), 'targetZ': widgets.targetZEdit.text(), 'waveType': widgets.waveTypeEdit.text(), 'cycle': widgets.cycleEdit.text(), 'centerFreq': widgets.centerFreqEdit.text(), 'bandwidth': widgets.bandwidthEdit.text()}
@@ -237,6 +238,12 @@ class MainWindow(QMainWindow):
             self.txSave.clear()
             self.rxSave.clear()
             self.targetSave.clear()
+            widgets.txXEdit.setText('')
+            widgets.txYEdit.setText('')
+            widgets.rxXEdit.setText('')
+            widgets.rxYEdit.setText('')
+            widgets.targetXEdit.setText('')
+            widgets.targetYEdit.setText('')
 
         # 오디오 파일 및 그래프 변환 - stack 3
         if btnName == "btn_information":

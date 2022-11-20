@@ -75,3 +75,5 @@ After expoting in .py and change the line "import resources_rc" to "from. Resouc
 
 
 
+"# pyqt_sonobuoy_gui" 
+# pyqt_sonobuoy_gui

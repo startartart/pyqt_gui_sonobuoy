@@ -1,0 +1,48 @@
+# '#'으로 시작하는 줄은 주석문
+# 형식 : 명령어 + 파라미터들
+# depth (수심) depth
+depth 300
+# tx (송신기 좌표) x y z
+tx 0 0 1
+# rx (수신기 좌표) x y z, 수신기 좌표가 없으면 monostatic으로 처리함
+# tx 설정보다 반드시 뒤에 와야 함.
+rx 1 0 8
+# target (표적 좌표) x y z [aspect]
+# 여기서 aspect는 표적의 자세각으로 생략하면 0, 단위 [deg] 시계방향 회전각
+# 자세각에 따라 하이라이트들의 위치를 변경함
+target 3000 0 50
+# pulse type duration[ms] freq[Hz] bandwidth[Hz], type : 1 = CW, 2 = LFM
+pulse 2 100 7000 400
+# sl (source level)
+sl 230
+# svp (sound velocity profile) no, 추가로 no개 줄의 [수심 음속]이 나옴
+svp 11
+0 1502
+31 1504
+60 1480
+90 1477
+120 1482
+150 1481
+180 1482
+210 1476
+240 1477
+360 1479
+5000 1480
+# highlight (target highlight) no, 추가로 no개 줄의 [x y z weight]이 나옴.
+# 각 좌표는 중심에 대한 상대적인 좌표임. 표적의 aspect에 따라 자동 계산됨.
+highlight 1
+0 0 0 1
+10 0 0 1
+20 0 0 1
+30 0 0 1
+40 0 0 1
+50 0 0 1
+60 0 0 1
+70 0 0 1
+80 0 0 1
+90 0 0 1
+# 시뮬레이션 관련 파라미터 (따로 지정하지 않으면 디폴트 값을 사용해도 됨)
+# 추후 추가할 듯...
+# range (거리 파라미터) min max step, 단위[m] min에서 max까지 ray tracing 수행
+range 0 15000 10
+# azimuth (방위각 파라미터) min max step, 단위 [deg]

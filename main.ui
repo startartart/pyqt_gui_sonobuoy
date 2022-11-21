@@ -7,8 +7,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1280</width>
-    <height>720</height>
+    <width>1133</width>
+    <height>662</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -1199,7 +1199,7 @@ background-repeat: no-repeat;</string>
                   <string/>
                  </property>
                  <property name="icon">
-                  <iconset resource="resources.qrc">
+                  <iconset resource="../../pyqt_gui_sonobuoy/resources.qrc">
                    <normaloff>:/icons/images/icons/icon_close.png</normaloff>:/icons/images/icons/icon_close.png</iconset>
                  </property>
                  <property name="iconSize">
@@ -1616,7 +1616,7 @@ p, li { white-space: pre-wrap; }
                    <string/>
                   </property>
                   <property name="icon">
-                   <iconset resource="resources.qrc">
+                   <iconset resource="../../pyqt_gui_sonobuoy/resources.qrc">
                     <normaloff>:/icons/images/icons/icon_minimize.png</normaloff>:/icons/images/icons/icon_minimize.png</iconset>
                   </property>
                   <property name="iconSize">
@@ -1661,7 +1661,7 @@ p, li { white-space: pre-wrap; }
                    <string/>
                   </property>
                   <property name="icon">
-                   <iconset resource="resources.qrc">
+                   <iconset resource="../../pyqt_gui_sonobuoy/resources.qrc">
                     <normaloff>:/icons/images/icons/icon_maximize.png</normaloff>:/icons/images/icons/icon_maximize.png</iconset>
                   </property>
                   <property name="iconSize">
@@ -1696,7 +1696,7 @@ p, li { white-space: pre-wrap; }
                    <string/>
                   </property>
                   <property name="icon">
-                   <iconset resource="resources.qrc">
+                   <iconset resource="../../pyqt_gui_sonobuoy/resources.qrc">
                     <normaloff>:/icons/images/icons/icon_close.png</normaloff>:/icons/images/icons/icon_close.png</iconset>
                   </property>
                   <property name="iconSize">
@@ -1794,7 +1794,7 @@ p, li { white-space: pre-wrap; }
                       <string notr="true">background: transparent;</string>
                      </property>
                      <property name="currentIndex">
-                      <number>2</number>
+                      <number>1</number>
                      </property>
                      <widget class="QWidget" name="home">
                       <property name="minimumSize">
@@ -1811,25 +1811,177 @@ background-repeat: no-repeat;
                       </property>
                      </widget>
                      <widget class="QWidget" name="show">
-                      <widget class="QWidget" name="verticalLayoutWidget_2">
-                       <property name="geometry">
-                        <rect>
-                         <x>380</x>
-                         <y>140</y>
-                         <width>160</width>
-                         <height>80</height>
-                        </rect>
-                       </property>
-                       <layout class="QVBoxLayout" name="verticalLayout_21">
-                        <item>
-                         <widget class="QLabel" name="label_3">
-                          <property name="text">
-                           <string>show wav, graph</string>
-                          </property>
-                         </widget>
-                        </item>
-                       </layout>
-                      </widget>
+                      <layout class="QGridLayout" name="gridLayout_5">
+                       <item row="0" column="0">
+                        <layout class="QGridLayout" name="gridLayout_4">
+                         <item row="1" column="1">
+                          <layout class="QVBoxLayout" name="verticalLayout_4">
+                           <item>
+                            <widget class="QLabel" name="label_2">
+                             <property name="minimumSize">
+                              <size>
+                               <width>100</width>
+                               <height>20</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>100</width>
+                               <height>20</height>
+                              </size>
+                             </property>
+                             <property name="text">
+                              <string>wav.png</string>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <widget class="QLabel" name="label_wav">
+                             <property name="sizePolicy">
+                              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                               <horstretch>0</horstretch>
+                               <verstretch>0</verstretch>
+                              </sizepolicy>
+                             </property>
+                             <property name="minimumSize">
+                              <size>
+                               <width>0</width>
+                               <height>0</height>
+                              </size>
+                             </property>
+                             <property name="text">
+                              <string>wav</string>
+                             </property>
+                            </widget>
+                           </item>
+                          </layout>
+                         </item>
+                         <item row="1" column="2">
+                          <layout class="QVBoxLayout" name="verticalLayout_16">
+                           <item>
+                            <widget class="QLabel" name="label_4">
+                             <property name="minimumSize">
+                              <size>
+                               <width>100</width>
+                               <height>20</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>100</width>
+                               <height>20</height>
+                              </size>
+                             </property>
+                             <property name="text">
+                              <string>spec.png</string>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <widget class="QLabel" name="label_spec">
+                             <property name="sizePolicy">
+                              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                               <horstretch>0</horstretch>
+                               <verstretch>0</verstretch>
+                              </sizepolicy>
+                             </property>
+                             <property name="minimumSize">
+                              <size>
+                               <width>0</width>
+                               <height>0</height>
+                              </size>
+                             </property>
+                             <property name="text">
+                              <string>spec</string>
+                             </property>
+                            </widget>
+                           </item>
+                          </layout>
+                         </item>
+                         <item row="3" column="2">
+                          <layout class="QVBoxLayout" name="verticalLayout_18">
+                           <item>
+                            <widget class="QLabel" name="label_3">
+                             <property name="minimumSize">
+                              <size>
+                               <width>100</width>
+                               <height>20</height>
+                              </size>
+                             </property>
+                             <property name="maximumSize">
+                              <size>
+                               <width>100</width>
+                               <height>20</height>
+                              </size>
+                             </property>
+                             <property name="text">
+                              <string>soundpath.png</string>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <widget class="QLabel" name="label_soundpath">
+                             <property name="sizePolicy">
+                              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                               <horstretch>0</horstretch>
+                               <verstretch>0</verstretch>
+                              </sizepolicy>
+                             </property>
+                             <property name="minimumSize">
+                              <size>
+                               <width>0</width>
+                               <height>0</height>
+                              </size>
+                             </property>
+                             <property name="text">
+                              <string>soundpath</string>
+                             </property>
+                            </widget>
+                           </item>
+                          </layout>
+                         </item>
+                         <item row="3" column="1">
+                          <layout class="QVBoxLayout" name="verticalLayout_19">
+                           <item>
+                            <widget class="QLabel" name="outputDepth">
+                             <property name="text">
+                              <string>depth :</string>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <widget class="QLabel" name="outputTx">
+                             <property name="text">
+                              <string>Tx Pos(x, y, z) :</string>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <widget class="QLabel" name="outputRx">
+                             <property name="text">
+                              <string>Rx Pos(x, y, z) :</string>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <widget class="QLabel" name="outputTarget">
+                             <property name="text">
+                              <string>Target Pos(x, y, z) :</string>
+                             </property>
+                            </widget>
+                           </item>
+                           <item>
+                            <widget class="QLabel" name="outputPulse">
+                             <property name="text">
+                              <string>Pulse :</string>
+                             </property>
+                            </widget>
+                           </item>
+                          </layout>
+                         </item>
+                        </layout>
+                       </item>
+                      </layout>
                      </widget>
                      <widget class="QWidget" name="widgets">
                       <property name="styleSheet">
@@ -1859,10 +2011,7 @@ background-repeat: no-repeat;
                          <property name="frameShadow">
                           <enum>QFrame::Raised</enum>
                          </property>
-                         <layout class="QVBoxLayout" name="verticalLayout_16">
-                          <property name="spacing">
-                           <number>0</number>
-                          </property>
+                         <layout class="QGridLayout" name="gridLayout_7">
                           <property name="leftMargin">
                            <number>0</number>
                           </property>
@@ -1875,7 +2024,7 @@ background-repeat: no-repeat;
                           <property name="bottomMargin">
                            <number>0</number>
                           </property>
-                          <item>
+                          <item row="0" column="0">
                            <widget class="QFrame" name="frame_div_content_1">
                             <property name="minimumSize">
                              <size>
@@ -1925,8 +2074,8 @@ background-repeat: no-repeat;
                                <property name="frameShadow">
                                 <enum>QFrame::Raised</enum>
                                </property>
-                               <layout class="QVBoxLayout" name="verticalLayout_18">
-                                <item>
+                               <layout class="QGridLayout" name="gridLayout_8">
+                                <item row="0" column="0">
                                  <widget class="QLabel" name="labelBoxBlenderInstalation">
                                   <property name="font">
                                    <font>
@@ -1956,110 +2105,104 @@ background-repeat: no-repeat;
                                <property name="frameShadow">
                                 <enum>QFrame::Raised</enum>
                                </property>
-                               <widget class="QWidget" name="layoutWidget">
-                                <property name="geometry">
-                                 <rect>
-                                  <x>10</x>
-                                  <y>10</y>
-                                  <width>1141</width>
-                                  <height>55</height>
-                                 </rect>
-                                </property>
-                                <layout class="QGridLayout" name="gridLayout">
-                                 <item row="0" column="0">
-                                  <widget class="QLineEdit" name="areaEdit">
-                                   <property name="minimumSize">
-                                    <size>
-                                     <width>0</width>
-                                     <height>30</height>
-                                    </size>
-                                   </property>
-                                   <property name="styleSheet">
-                                    <string notr="true">background-color: rgb(33, 37, 43);</string>
-                                   </property>
-                                   <property name="text">
-                                    <string/>
-                                   </property>
-                                   <property name="placeholderText">
-                                    <string>좌표 입력(위도)</string>
-                                   </property>
-                                  </widget>
-                                 </item>
-                                 <item row="0" column="1">
-                                  <widget class="QLineEdit" name="areaEdit_2">
-                                   <property name="minimumSize">
-                                    <size>
-                                     <width>0</width>
-                                     <height>30</height>
-                                    </size>
-                                   </property>
-                                   <property name="styleSheet">
-                                    <string notr="true">background-color: rgb(33, 37, 43);</string>
-                                   </property>
-                                   <property name="text">
-                                    <string/>
-                                   </property>
-                                   <property name="placeholderText">
-                                    <string>좌표 입력(경도)</string>
-                                   </property>
-                                  </widget>
-                                 </item>
-                                 <item row="0" column="2">
-                                  <widget class="QPushButton" name="settingBtn">
-                                   <property name="minimumSize">
-                                    <size>
-                                     <width>150</width>
-                                     <height>30</height>
-                                    </size>
-                                   </property>
-                                   <property name="font">
-                                    <font>
-                                     <family>Segoe UI</family>
-                                     <pointsize>10</pointsize>
-                                     <weight>50</weight>
-                                     <italic>false</italic>
-                                     <bold>false</bold>
-                                    </font>
-                                   </property>
-                                   <property name="cursor">
-                                    <cursorShape>PointingHandCursor</cursorShape>
-                                   </property>
-                                   <property name="styleSheet">
-                                    <string notr="true">background-color: rgb(52, 59, 72);</string>
-                                   </property>
-                                   <property name="text">
-                                    <string>이동하기</string>
-                                   </property>
-                                   <property name="icon">
-                                    <iconset resource="resources.qrc">
-                                     <normaloff>:/icons/images/icons/cil-check.png</normaloff>:/icons/images/icons/cil-check.png</iconset>
-                                   </property>
-                                  </widget>
-                                 </item>
-                                 <item row="1" column="0">
-                                  <widget class="QLabel" name="currentArea">
-                                   <property name="minimumSize">
-                                    <size>
-                                     <width>0</width>
-                                     <height>17</height>
-                                    </size>
-                                   </property>
-                                   <property name="styleSheet">
-                                    <string notr="true">color: rgb(113, 126, 149);</string>
-                                   </property>
-                                   <property name="lineWidth">
-                                    <number>1</number>
-                                   </property>
-                                   <property name="text">
-                                    <string>현재 좌표 : (0,0)</string>
-                                   </property>
-                                   <property name="alignment">
-                                    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-                                   </property>
-                                  </widget>
-                                 </item>
-                                </layout>
-                               </widget>
+                               <layout class="QGridLayout" name="gridLayout_9">
+                                <item row="0" column="0">
+                                 <layout class="QGridLayout" name="gridLayout">
+                                  <item row="0" column="0">
+                                   <widget class="QLineEdit" name="areaEdit">
+                                    <property name="minimumSize">
+                                     <size>
+                                      <width>0</width>
+                                      <height>30</height>
+                                     </size>
+                                    </property>
+                                    <property name="styleSheet">
+                                     <string notr="true">background-color: rgb(33, 37, 43);</string>
+                                    </property>
+                                    <property name="text">
+                                     <string/>
+                                    </property>
+                                    <property name="placeholderText">
+                                     <string>좌표 입력(위도)</string>
+                                    </property>
+                                   </widget>
+                                  </item>
+                                  <item row="0" column="1">
+                                   <widget class="QLineEdit" name="areaEdit_2">
+                                    <property name="minimumSize">
+                                     <size>
+                                      <width>0</width>
+                                      <height>30</height>
+                                     </size>
+                                    </property>
+                                    <property name="styleSheet">
+                                     <string notr="true">background-color: rgb(33, 37, 43);</string>
+                                    </property>
+                                    <property name="text">
+                                     <string/>
+                                    </property>
+                                    <property name="placeholderText">
+                                     <string>좌표 입력(경도)</string>
+                                    </property>
+                                   </widget>
+                                  </item>
+                                  <item row="0" column="2">
+                                   <widget class="QPushButton" name="settingBtn">
+                                    <property name="minimumSize">
+                                     <size>
+                                      <width>150</width>
+                                      <height>30</height>
+                                     </size>
+                                    </property>
+                                    <property name="font">
+                                     <font>
+                                      <family>Segoe UI</family>
+                                      <pointsize>10</pointsize>
+                                      <weight>50</weight>
+                                      <italic>false</italic>
+                                      <bold>false</bold>
+                                     </font>
+                                    </property>
+                                    <property name="cursor">
+                                     <cursorShape>PointingHandCursor</cursorShape>
+                                    </property>
+                                    <property name="styleSheet">
+                                     <string notr="true">background-color: rgb(52, 59, 72);</string>
+                                    </property>
+                                    <property name="text">
+                                     <string>이동하기</string>
+                                    </property>
+                                    <property name="icon">
+                                     <iconset resource="../../pyqt_gui_sonobuoy/resources.qrc">
+                                      <normaloff>:/icons/images/icons/cil-check.png</normaloff>:/icons/images/icons/cil-check.png</iconset>
+                                    </property>
+                                   </widget>
+                                  </item>
+                                  <item row="1" column="0">
+                                   <widget class="QLabel" name="currentArea">
+                                    <property name="minimumSize">
+                                     <size>
+                                      <width>0</width>
+                                      <height>17</height>
+                                     </size>
+                                    </property>
+                                    <property name="styleSheet">
+                                     <string notr="true">color: rgb(113, 126, 149);</string>
+                                    </property>
+                                    <property name="lineWidth">
+                                     <number>1</number>
+                                    </property>
+                                    <property name="text">
+                                     <string>현재 좌표 : (0,0)</string>
+                                    </property>
+                                    <property name="alignment">
+                                     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                                    </property>
+                                   </widget>
+                                  </item>
+                                 </layout>
+                                </item>
+                               </layout>
                               </widget>
                              </item>
                             </layout>
@@ -2082,490 +2225,478 @@ background-repeat: no-repeat;
                          <property name="frameShadow">
                           <enum>QFrame::Raised</enum>
                          </property>
-                         <widget class="QWidget" name="">
-                          <property name="geometry">
-                           <rect>
-                            <x>11</x>
-                            <y>11</y>
-                            <width>931</width>
-                            <height>251</height>
-                           </rect>
-                          </property>
-                          <layout class="QGridLayout" name="gridLayout_2">
-                           <item row="1" column="3" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
-                            <widget class="QLineEdit" name="txZEdit">
-                             <property name="minimumSize">
-                              <size>
-                               <width>0</width>
-                               <height>30</height>
-                              </size>
-                             </property>
-                             <property name="styleSheet">
-                              <string notr="true">background-color: rgb(33, 37, 43);</string>
-                             </property>
-                             <property name="text">
-                              <string/>
-                             </property>
-                             <property name="placeholderText">
-                              <string>pos z</string>
-                             </property>
-                            </widget>
-                           </item>
-                           <item row="1" column="4">
-                            <widget class="QPushButton" name="txBtn">
-                             <property name="minimumSize">
-                              <size>
-                               <width>150</width>
-                               <height>30</height>
-                              </size>
-                             </property>
-                             <property name="font">
-                              <font>
-                               <family>Segoe UI</family>
-                               <pointsize>10</pointsize>
-                               <weight>50</weight>
-                               <italic>false</italic>
-                               <bold>false</bold>
-                              </font>
-                             </property>
-                             <property name="cursor">
-                              <cursorShape>PointingHandCursor</cursorShape>
-                             </property>
-                             <property name="styleSheet">
-                              <string notr="true">background-color: rgb(52, 59, 72);</string>
-                             </property>
-                             <property name="text">
-                              <string>TX 송신기 위치</string>
-                             </property>
-                             <property name="icon">
-                              <iconset resource="resources.qrc">
-                               <normaloff>:/icons/images/icons/cil-check.png</normaloff>:/icons/images/icons/cil-check.png</iconset>
-                             </property>
-                            </widget>
-                           </item>
-                           <item row="1" column="2" alignment="Qt::AlignHCenter">
-                            <widget class="QLineEdit" name="txYEdit">
-                             <property name="minimumSize">
-                              <size>
-                               <width>0</width>
-                               <height>30</height>
-                              </size>
-                             </property>
-                             <property name="styleSheet">
-                              <string notr="true">background-color: rgb(33, 37, 43);</string>
-                             </property>
-                             <property name="text">
-                              <string/>
-                             </property>
-                             <property name="placeholderText">
-                              <string>pos y</string>
-                             </property>
-                            </widget>
-                           </item>
-                           <item row="3" column="2" alignment="Qt::AlignHCenter">
-                            <widget class="QLineEdit" name="rxYEdit">
-                             <property name="minimumSize">
-                              <size>
-                               <width>0</width>
-                               <height>30</height>
-                              </size>
-                             </property>
-                             <property name="styleSheet">
-                              <string notr="true">background-color: rgb(33, 37, 43);</string>
-                             </property>
-                             <property name="text">
-                              <string/>
-                             </property>
-                             <property name="placeholderText">
-                              <string>pos y</string>
-                             </property>
-                            </widget>
-                           </item>
-                           <item row="1" column="1" alignment="Qt::AlignHCenter">
-                            <widget class="QLineEdit" name="txXEdit">
-                             <property name="minimumSize">
-                              <size>
-                               <width>0</width>
-                               <height>30</height>
-                              </size>
-                             </property>
-                             <property name="styleSheet">
-                              <string notr="true">background-color: rgb(33, 37, 43);
+                         <layout class="QGridLayout" name="gridLayout_10">
+                          <item row="0" column="0">
+                           <layout class="QGridLayout" name="gridLayout_2">
+                            <item row="1" column="3" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+                             <widget class="QLineEdit" name="txZEdit">
+                              <property name="minimumSize">
+                               <size>
+                                <width>0</width>
+                                <height>30</height>
+                               </size>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true">background-color: rgb(33, 37, 43);</string>
+                              </property>
+                              <property name="text">
+                               <string/>
+                              </property>
+                              <property name="placeholderText">
+                               <string>pos z</string>
+                              </property>
+                             </widget>
+                            </item>
+                            <item row="1" column="4">
+                             <widget class="QPushButton" name="txBtn">
+                              <property name="minimumSize">
+                               <size>
+                                <width>150</width>
+                                <height>30</height>
+                               </size>
+                              </property>
+                              <property name="font">
+                               <font>
+                                <family>Segoe UI</family>
+                                <pointsize>10</pointsize>
+                                <weight>50</weight>
+                                <italic>false</italic>
+                                <bold>false</bold>
+                               </font>
+                              </property>
+                              <property name="cursor">
+                               <cursorShape>PointingHandCursor</cursorShape>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true">background-color: rgb(52, 59, 72);</string>
+                              </property>
+                              <property name="text">
+                               <string>TX 송신기 위치</string>
+                              </property>
+                              <property name="icon">
+                               <iconset resource="../../pyqt_gui_sonobuoy/resources.qrc">
+                                <normaloff>:/icons/images/icons/cil-check.png</normaloff>:/icons/images/icons/cil-check.png</iconset>
+                              </property>
+                             </widget>
+                            </item>
+                            <item row="1" column="2" alignment="Qt::AlignHCenter">
+                             <widget class="QLineEdit" name="txYEdit">
+                              <property name="minimumSize">
+                               <size>
+                                <width>0</width>
+                                <height>30</height>
+                               </size>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true">background-color: rgb(33, 37, 43);</string>
+                              </property>
+                              <property name="text">
+                               <string/>
+                              </property>
+                              <property name="placeholderText">
+                               <string>pos y</string>
+                              </property>
+                             </widget>
+                            </item>
+                            <item row="3" column="2" alignment="Qt::AlignHCenter">
+                             <widget class="QLineEdit" name="rxYEdit">
+                              <property name="minimumSize">
+                               <size>
+                                <width>0</width>
+                                <height>30</height>
+                               </size>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true">background-color: rgb(33, 37, 43);</string>
+                              </property>
+                              <property name="text">
+                               <string/>
+                              </property>
+                              <property name="placeholderText">
+                               <string>pos y</string>
+                              </property>
+                             </widget>
+                            </item>
+                            <item row="1" column="1" alignment="Qt::AlignHCenter">
+                             <widget class="QLineEdit" name="txXEdit">
+                              <property name="minimumSize">
+                               <size>
+                                <width>0</width>
+                                <height>30</height>
+                               </size>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true">background-color: rgb(33, 37, 43);
 </string>
-                             </property>
-                             <property name="text">
-                              <string/>
-                             </property>
-                             <property name="placeholderText">
-                              <string>pos x</string>
-                             </property>
-                            </widget>
-                           </item>
-                           <item row="4" column="3" alignment="Qt::AlignHCenter">
-                            <widget class="QLineEdit" name="targetZEdit">
-                             <property name="minimumSize">
-                              <size>
-                               <width>0</width>
-                               <height>30</height>
-                              </size>
-                             </property>
-                             <property name="styleSheet">
-                              <string notr="true">background-color: rgb(33, 37, 43);</string>
-                             </property>
-                             <property name="text">
-                              <string/>
-                             </property>
-                             <property name="placeholderText">
-                              <string>pos z</string>
-                             </property>
-                            </widget>
-                           </item>
-                           <item row="3" column="3" alignment="Qt::AlignHCenter">
-                            <widget class="QLineEdit" name="rxZEdit">
-                             <property name="minimumSize">
-                              <size>
-                               <width>0</width>
-                               <height>30</height>
-                              </size>
-                             </property>
-                             <property name="styleSheet">
-                              <string notr="true">background-color: rgb(33, 37, 43);</string>
-                             </property>
-                             <property name="text">
-                              <string/>
-                             </property>
-                             <property name="placeholderText">
-                              <string>pos z</string>
-                             </property>
-                            </widget>
-                           </item>
-                           <item row="4" column="2" alignment="Qt::AlignHCenter">
-                            <widget class="QLineEdit" name="targetYEdit">
-                             <property name="minimumSize">
-                              <size>
-                               <width>0</width>
-                               <height>30</height>
-                              </size>
-                             </property>
-                             <property name="styleSheet">
-                              <string notr="true">background-color: rgb(33, 37, 43);</string>
-                             </property>
-                             <property name="text">
-                              <string/>
-                             </property>
-                             <property name="placeholderText">
-                              <string>pos y</string>
-                             </property>
-                            </widget>
-                           </item>
-                           <item row="5" column="4">
-                            <widget class="QPushButton" name="pulseBtn">
-                             <property name="minimumSize">
-                              <size>
-                               <width>150</width>
-                               <height>30</height>
-                              </size>
-                             </property>
-                             <property name="font">
-                              <font>
-                               <family>Segoe UI</family>
-                               <pointsize>10</pointsize>
-                               <weight>50</weight>
-                               <italic>false</italic>
-                               <bold>false</bold>
-                              </font>
-                             </property>
-                             <property name="cursor">
-                              <cursorShape>PointingHandCursor</cursorShape>
-                             </property>
-                             <property name="styleSheet">
-                              <string notr="true">background-color: rgb(52, 59, 72);</string>
-                             </property>
-                             <property name="text">
-                              <string>PULSE 파형 종류</string>
-                             </property>
-                             <property name="icon">
-                              <iconset resource="resources.qrc">
-                               <normaloff>:/icons/images/icons/cil-check.png</normaloff>:/icons/images/icons/cil-check.png</iconset>
-                             </property>
-                            </widget>
-                           </item>
-                           <item row="4" column="1" alignment="Qt::AlignHCenter">
-                            <widget class="QLineEdit" name="targetXEdit">
-                             <property name="minimumSize">
-                              <size>
-                               <width>0</width>
-                               <height>30</height>
-                              </size>
-                             </property>
-                             <property name="styleSheet">
-                              <string notr="true">background-color: rgb(33, 37, 43);</string>
-                             </property>
-                             <property name="text">
-                              <string/>
-                             </property>
-                             <property name="placeholderText">
-                              <string>pos x</string>
-                             </property>
-                            </widget>
-                           </item>
-                           <item row="3" column="1" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
-                            <widget class="QLineEdit" name="rxXEdit">
-                             <property name="minimumSize">
-                              <size>
-                               <width>0</width>
-                               <height>30</height>
-                              </size>
-                             </property>
-                             <property name="styleSheet">
-                              <string notr="true">background-color: rgb(33, 37, 43);</string>
-                             </property>
-                             <property name="text">
-                              <string/>
-                             </property>
-                             <property name="placeholderText">
-                              <string>pos x</string>
-                             </property>
-                            </widget>
-                           </item>
-                           <item row="5" column="3" alignment="Qt::AlignHCenter">
-                            <widget class="QLineEdit" name="bandwidthEdit">
-                             <property name="minimumSize">
-                              <size>
-                               <width>0</width>
-                               <height>30</height>
-                              </size>
-                             </property>
-                             <property name="styleSheet">
-                              <string notr="true">background-color: rgb(33, 37, 43);</string>
-                             </property>
-                             <property name="text">
-                              <string/>
-                             </property>
-                             <property name="placeholderText">
-                              <string>대역폭</string>
-                             </property>
-                            </widget>
-                           </item>
-                           <item row="0" column="4">
-                            <widget class="QPushButton" name="depthBtn">
-                             <property name="minimumSize">
-                              <size>
-                               <width>150</width>
-                               <height>30</height>
-                              </size>
-                             </property>
-                             <property name="font">
-                              <font>
-                               <family>Segoe UI</family>
-                               <pointsize>10</pointsize>
-                               <weight>50</weight>
-                               <italic>false</italic>
-                               <bold>false</bold>
-                              </font>
-                             </property>
-                             <property name="cursor">
-                              <cursorShape>PointingHandCursor</cursorShape>
-                             </property>
-                             <property name="styleSheet">
-                              <string notr="true">background-color: rgb(52, 59, 72);</string>
-                             </property>
-                             <property name="text">
-                              <string>DEPTH 깊이</string>
-                             </property>
-                             <property name="icon">
-                              <iconset resource="resources.qrc">
-                               <normaloff>:/icons/images/icons/cil-check.png</normaloff>:/icons/images/icons/cil-check.png</iconset>
-                             </property>
-                            </widget>
-                           </item>
-                           <item row="3" column="4">
-                            <widget class="QPushButton" name="rxBtn">
-                             <property name="minimumSize">
-                              <size>
-                               <width>150</width>
-                               <height>30</height>
-                              </size>
-                             </property>
-                             <property name="font">
-                              <font>
-                               <family>Segoe UI</family>
-                               <pointsize>10</pointsize>
-                               <weight>50</weight>
-                               <italic>false</italic>
-                               <bold>false</bold>
-                              </font>
-                             </property>
-                             <property name="cursor">
-                              <cursorShape>PointingHandCursor</cursorShape>
-                             </property>
-                             <property name="styleSheet">
-                              <string notr="true">background-color: rgb(52, 59, 72);</string>
-                             </property>
-                             <property name="text">
-                              <string>RX 수신기 위치</string>
-                             </property>
-                             <property name="icon">
-                              <iconset resource="resources.qrc">
-                               <normaloff>:/icons/images/icons/cil-check.png</normaloff>:/icons/images/icons/cil-check.png</iconset>
-                             </property>
-                            </widget>
-                           </item>
-                           <item row="0" column="3" alignment="Qt::AlignHCenter">
-                            <widget class="QLineEdit" name="depthEdit">
-                             <property name="minimumSize">
-                              <size>
-                               <width>0</width>
-                               <height>30</height>
-                              </size>
-                             </property>
-                             <property name="styleSheet">
-                              <string notr="true">background-color: rgb(33, 37, 43);</string>
-                             </property>
-                             <property name="text">
-                              <string/>
-                             </property>
-                             <property name="placeholderText">
-                              <string>ex) 100</string>
-                             </property>
-                            </widget>
-                           </item>
-                           <item row="5" column="2" alignment="Qt::AlignHCenter">
-                            <widget class="QLineEdit" name="centerFreqEdit">
-                             <property name="minimumSize">
-                              <size>
-                               <width>0</width>
-                               <height>30</height>
-                              </size>
-                             </property>
-                             <property name="styleSheet">
-                              <string notr="true">background-color: rgb(33, 37, 43);</string>
-                             </property>
-                             <property name="text">
-                              <string/>
-                             </property>
-                             <property name="placeholderText">
-                              <string>중심주파수</string>
-                             </property>
-                            </widget>
-                           </item>
-                           <item row="5" column="1" alignment="Qt::AlignHCenter">
-                            <widget class="QLineEdit" name="cycleEdit">
-                             <property name="minimumSize">
-                              <size>
-                               <width>0</width>
-                               <height>30</height>
-                              </size>
-                             </property>
-                             <property name="styleSheet">
-                              <string notr="true">background-color: rgb(33, 37, 43);</string>
-                             </property>
-                             <property name="text">
-                              <string/>
-                             </property>
-                             <property name="placeholderText">
-                              <string>주기</string>
-                             </property>
-                            </widget>
-                           </item>
-                           <item row="4" column="4">
-                            <widget class="QPushButton" name="targetBtn">
-                             <property name="minimumSize">
-                              <size>
-                               <width>150</width>
-                               <height>30</height>
-                              </size>
-                             </property>
-                             <property name="font">
-                              <font>
-                               <family>Segoe UI</family>
-                               <pointsize>10</pointsize>
-                               <weight>50</weight>
-                               <italic>false</italic>
-                               <bold>false</bold>
-                              </font>
-                             </property>
-                             <property name="cursor">
-                              <cursorShape>PointingHandCursor</cursorShape>
-                             </property>
-                             <property name="styleSheet">
-                              <string notr="true">background-color: rgb(52, 59, 72);</string>
-                             </property>
-                             <property name="text">
-                              <string>TARGET 타켓 위치</string>
-                             </property>
-                             <property name="icon">
-                              <iconset resource="resources.qrc">
-                               <normaloff>:/icons/images/icons/cil-check.png</normaloff>:/icons/images/icons/cil-check.png</iconset>
-                             </property>
-                            </widget>
-                           </item>
-                           <item row="5" column="0" alignment="Qt::AlignHCenter">
-                            <widget class="QLineEdit" name="waveTypeEdit">
-                             <property name="minimumSize">
-                              <size>
-                               <width>0</width>
-                               <height>30</height>
-                              </size>
-                             </property>
-                             <property name="styleSheet">
-                              <string notr="true">background-color: rgb(33, 37, 43);</string>
-                             </property>
-                             <property name="text">
-                              <string/>
-                             </property>
-                             <property name="placeholderText">
-                              <string>파형종류</string>
-                             </property>
-                            </widget>
-                           </item>
-                           <item row="0" column="0">
-                            <widget class="QLabel" name="labelBoxBlenderInstalation_2">
-                             <property name="font">
-                              <font>
-                               <family>Segoe UI</family>
-                               <pointsize>10</pointsize>
-                               <weight>50</weight>
-                               <italic>false</italic>
-                               <bold>false</bold>
-                              </font>
-                             </property>
-                             <property name="styleSheet">
-                              <string notr="true"/>
-                             </property>
-                             <property name="text">
-                              <string>파라미터 입력 전송</string>
-                             </property>
-                            </widget>
-                           </item>
-                          </layout>
-                         </widget>
-                         <widget class="QPushButton" name="sendBtn">
-                          <property name="geometry">
-                           <rect>
-                            <x>970</x>
-                            <y>60</y>
-                            <width>181</width>
-                            <height>151</height>
-                           </rect>
-                          </property>
-                          <property name="minimumSize">
-                           <size>
-                            <width>120</width>
-                            <height>120</height>
-                           </size>
-                          </property>
-                          <property name="styleSheet">
-                           <string notr="true">background-color: rgb(52, 59, 72);</string>
-                          </property>
-                          <property name="text">
-                           <string>Send 보내기</string>
-                          </property>
-                          <property name="icon">
-                           <iconset resource="resources.qrc">
-                            <normaloff>:/icons/images/icons/cil-check-alt.png</normaloff>:/icons/images/icons/cil-check-alt.png</iconset>
-                          </property>
-                         </widget>
+                              </property>
+                              <property name="text">
+                               <string/>
+                              </property>
+                              <property name="placeholderText">
+                               <string>pos x</string>
+                              </property>
+                             </widget>
+                            </item>
+                            <item row="4" column="3" alignment="Qt::AlignHCenter">
+                             <widget class="QLineEdit" name="targetZEdit">
+                              <property name="minimumSize">
+                               <size>
+                                <width>0</width>
+                                <height>30</height>
+                               </size>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true">background-color: rgb(33, 37, 43);</string>
+                              </property>
+                              <property name="text">
+                               <string/>
+                              </property>
+                              <property name="placeholderText">
+                               <string>pos z</string>
+                              </property>
+                             </widget>
+                            </item>
+                            <item row="3" column="3" alignment="Qt::AlignHCenter">
+                             <widget class="QLineEdit" name="rxZEdit">
+                              <property name="minimumSize">
+                               <size>
+                                <width>0</width>
+                                <height>30</height>
+                               </size>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true">background-color: rgb(33, 37, 43);</string>
+                              </property>
+                              <property name="text">
+                               <string/>
+                              </property>
+                              <property name="placeholderText">
+                               <string>pos z</string>
+                              </property>
+                             </widget>
+                            </item>
+                            <item row="4" column="2" alignment="Qt::AlignHCenter">
+                             <widget class="QLineEdit" name="targetYEdit">
+                              <property name="minimumSize">
+                               <size>
+                                <width>0</width>
+                                <height>30</height>
+                               </size>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true">background-color: rgb(33, 37, 43);</string>
+                              </property>
+                              <property name="text">
+                               <string/>
+                              </property>
+                              <property name="placeholderText">
+                               <string>pos y</string>
+                              </property>
+                             </widget>
+                            </item>
+                            <item row="5" column="4">
+                             <widget class="QPushButton" name="pulseBtn">
+                              <property name="minimumSize">
+                               <size>
+                                <width>150</width>
+                                <height>30</height>
+                               </size>
+                              </property>
+                              <property name="font">
+                               <font>
+                                <family>Segoe UI</family>
+                                <pointsize>10</pointsize>
+                                <weight>50</weight>
+                                <italic>false</italic>
+                                <bold>false</bold>
+                               </font>
+                              </property>
+                              <property name="cursor">
+                               <cursorShape>PointingHandCursor</cursorShape>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true">background-color: rgb(52, 59, 72);</string>
+                              </property>
+                              <property name="text">
+                               <string>PULSE 파형 종류</string>
+                              </property>
+                              <property name="icon">
+                               <iconset resource="../../pyqt_gui_sonobuoy/resources.qrc">
+                                <normaloff>:/icons/images/icons/cil-check.png</normaloff>:/icons/images/icons/cil-check.png</iconset>
+                              </property>
+                             </widget>
+                            </item>
+                            <item row="4" column="1" alignment="Qt::AlignHCenter">
+                             <widget class="QLineEdit" name="targetXEdit">
+                              <property name="minimumSize">
+                               <size>
+                                <width>0</width>
+                                <height>30</height>
+                               </size>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true">background-color: rgb(33, 37, 43);</string>
+                              </property>
+                              <property name="text">
+                               <string/>
+                              </property>
+                              <property name="placeholderText">
+                               <string>pos x</string>
+                              </property>
+                             </widget>
+                            </item>
+                            <item row="3" column="1" alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+                             <widget class="QLineEdit" name="rxXEdit">
+                              <property name="minimumSize">
+                               <size>
+                                <width>0</width>
+                                <height>30</height>
+                               </size>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true">background-color: rgb(33, 37, 43);</string>
+                              </property>
+                              <property name="text">
+                               <string/>
+                              </property>
+                              <property name="placeholderText">
+                               <string>pos x</string>
+                              </property>
+                             </widget>
+                            </item>
+                            <item row="5" column="3" alignment="Qt::AlignHCenter">
+                             <widget class="QLineEdit" name="bandwidthEdit">
+                              <property name="minimumSize">
+                               <size>
+                                <width>0</width>
+                                <height>30</height>
+                               </size>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true">background-color: rgb(33, 37, 43);</string>
+                              </property>
+                              <property name="text">
+                               <string/>
+                              </property>
+                              <property name="placeholderText">
+                               <string>대역폭</string>
+                              </property>
+                             </widget>
+                            </item>
+                            <item row="0" column="4">
+                             <widget class="QPushButton" name="depthBtn">
+                              <property name="minimumSize">
+                               <size>
+                                <width>150</width>
+                                <height>30</height>
+                               </size>
+                              </property>
+                              <property name="font">
+                               <font>
+                                <family>Segoe UI</family>
+                                <pointsize>10</pointsize>
+                                <weight>50</weight>
+                                <italic>false</italic>
+                                <bold>false</bold>
+                               </font>
+                              </property>
+                              <property name="cursor">
+                               <cursorShape>PointingHandCursor</cursorShape>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true">background-color: rgb(52, 59, 72);</string>
+                              </property>
+                              <property name="text">
+                               <string>DEPTH 깊이</string>
+                              </property>
+                              <property name="icon">
+                               <iconset resource="../../pyqt_gui_sonobuoy/resources.qrc">
+                                <normaloff>:/icons/images/icons/cil-check.png</normaloff>:/icons/images/icons/cil-check.png</iconset>
+                              </property>
+                             </widget>
+                            </item>
+                            <item row="3" column="4">
+                             <widget class="QPushButton" name="rxBtn">
+                              <property name="minimumSize">
+                               <size>
+                                <width>150</width>
+                                <height>30</height>
+                               </size>
+                              </property>
+                              <property name="font">
+                               <font>
+                                <family>Segoe UI</family>
+                                <pointsize>10</pointsize>
+                                <weight>50</weight>
+                                <italic>false</italic>
+                                <bold>false</bold>
+                               </font>
+                              </property>
+                              <property name="cursor">
+                               <cursorShape>PointingHandCursor</cursorShape>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true">background-color: rgb(52, 59, 72);</string>
+                              </property>
+                              <property name="text">
+                               <string>RX 수신기 위치</string>
+                              </property>
+                              <property name="icon">
+                               <iconset resource="../../pyqt_gui_sonobuoy/resources.qrc">
+                                <normaloff>:/icons/images/icons/cil-check.png</normaloff>:/icons/images/icons/cil-check.png</iconset>
+                              </property>
+                             </widget>
+                            </item>
+                            <item row="0" column="3" alignment="Qt::AlignHCenter">
+                             <widget class="QLineEdit" name="depthEdit">
+                              <property name="minimumSize">
+                               <size>
+                                <width>0</width>
+                                <height>30</height>
+                               </size>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true">background-color: rgb(33, 37, 43);</string>
+                              </property>
+                              <property name="text">
+                               <string/>
+                              </property>
+                              <property name="placeholderText">
+                               <string>ex) 100</string>
+                              </property>
+                             </widget>
+                            </item>
+                            <item row="5" column="2" alignment="Qt::AlignHCenter">
+                             <widget class="QLineEdit" name="centerFreqEdit">
+                              <property name="minimumSize">
+                               <size>
+                                <width>0</width>
+                                <height>30</height>
+                               </size>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true">background-color: rgb(33, 37, 43);</string>
+                              </property>
+                              <property name="text">
+                               <string/>
+                              </property>
+                              <property name="placeholderText">
+                               <string>중심주파수</string>
+                              </property>
+                             </widget>
+                            </item>
+                            <item row="5" column="1" alignment="Qt::AlignHCenter">
+                             <widget class="QLineEdit" name="cycleEdit">
+                              <property name="minimumSize">
+                               <size>
+                                <width>0</width>
+                                <height>30</height>
+                               </size>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true">background-color: rgb(33, 37, 43);</string>
+                              </property>
+                              <property name="text">
+                               <string/>
+                              </property>
+                              <property name="placeholderText">
+                               <string>주기</string>
+                              </property>
+                             </widget>
+                            </item>
+                            <item row="4" column="4">
+                             <widget class="QPushButton" name="targetBtn">
+                              <property name="minimumSize">
+                               <size>
+                                <width>150</width>
+                                <height>30</height>
+                               </size>
+                              </property>
+                              <property name="font">
+                               <font>
+                                <family>Segoe UI</family>
+                                <pointsize>10</pointsize>
+                                <weight>50</weight>
+                                <italic>false</italic>
+                                <bold>false</bold>
+                               </font>
+                              </property>
+                              <property name="cursor">
+                               <cursorShape>PointingHandCursor</cursorShape>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true">background-color: rgb(52, 59, 72);</string>
+                              </property>
+                              <property name="text">
+                               <string>TARGET 타켓 위치</string>
+                              </property>
+                              <property name="icon">
+                               <iconset resource="../../pyqt_gui_sonobuoy/resources.qrc">
+                                <normaloff>:/icons/images/icons/cil-check.png</normaloff>:/icons/images/icons/cil-check.png</iconset>
+                              </property>
+                             </widget>
+                            </item>
+                            <item row="5" column="0" alignment="Qt::AlignHCenter">
+                             <widget class="QLineEdit" name="waveTypeEdit">
+                              <property name="minimumSize">
+                               <size>
+                                <width>0</width>
+                                <height>30</height>
+                               </size>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true">background-color: rgb(33, 37, 43);</string>
+                              </property>
+                              <property name="text">
+                               <string/>
+                              </property>
+                              <property name="placeholderText">
+                               <string>파형종류</string>
+                              </property>
+                             </widget>
+                            </item>
+                            <item row="0" column="0">
+                             <widget class="QLabel" name="labelBoxBlenderInstalation_2">
+                              <property name="font">
+                               <font>
+                                <family>Segoe UI</family>
+                                <pointsize>10</pointsize>
+                                <weight>50</weight>
+                                <italic>false</italic>
+                                <bold>false</bold>
+                               </font>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true"/>
+                              </property>
+                              <property name="text">
+                               <string>파라미터 입력 전송</string>
+                              </property>
+                             </widget>
+                            </item>
+                           </layout>
+                          </item>
+                          <item row="0" column="1">
+                           <widget class="QPushButton" name="sendBtn">
+                            <property name="minimumSize">
+                             <size>
+                              <width>120</width>
+                              <height>120</height>
+                             </size>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">background-color: rgb(52, 59, 72);</string>
+                            </property>
+                            <property name="text">
+                             <string>Send 보내기</string>
+                            </property>
+                            <property name="icon">
+                             <iconset resource="../../pyqt_gui_sonobuoy/resources.qrc">
+                              <normaloff>:/icons/images/icons/cil-check-alt.png</normaloff>:/icons/images/icons/cil-check-alt.png</iconset>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
                         </widget>
                        </item>
                       </layout>
@@ -2927,7 +3058,7 @@ background-repeat: no-repeat;
   </widget>
  </widget>
  <resources>
-  <include location="resources.qrc"/>
+  <include location="../../pyqt_gui_sonobuoy/resources.qrc"/>
  </resources>
  <connections/>
 </ui>

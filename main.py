@@ -18,6 +18,7 @@ import sys
 import os
 import platform
 import requests
+import generate_ActiveSig_PB as generate
 import config
 
 # IMPORT / GUI AND MODULES AND WIDGETS
@@ -199,8 +200,27 @@ class MainWindow(QMainWindow):
 
         # 파라미터 보내기 - stack 1 function 3
         if btnName == "sendBtn":
-            self.paramList = {'depth': widgets.depthEdit.text(), 'txX': widgets.txXEdit.text(), 'txY': widgets.txYEdit.text(), 'txZ': widgets.txZEdit.text(), 'rxX': widgets.rxXEdit.text(), 'rxY': widgets.rxYEdit.text(), 'rxZ': widgets.rxZEdit.text(), 'targetX': widgets.targetXEdit.text(), 'targetY': widgets.targetYEdit.text(), 'targetZ': widgets.targetZEdit.text(), 'waveType': widgets.waveTypeEdit.text(), 'cycle': widgets.cycleEdit.text(), 'centerFreq': widgets.centerFreqEdit.text(), 'bandwidth': widgets.bandwidthEdit.text()}
-            print(self.paramList)
+            self.paramList = {
+            'depth': widgets.depthEdit.text(), 'tx' :[widgets.txXEdit.text(), widgets.txYEdit.text(), widgets.txZEdit.text()], 'rx': [widgets.rxXEdit.text(), widgets.rxYEdit.text(), widgets.rxZEdit.text()],
+            'target': [widgets.targetXEdit.text(), widgets.targetYEdit.text(), widgets.targetZEdit.text()],
+            'waveType': widgets.waveTypeEdit.text(), 'cycle': widgets.cycleEdit.text(), 'centerFreq': widgets.centerFreqEdit.text(), 'bandwidth': widgets.bandwidthEdit.text()
+            }
+            generate.main(self.paramList)
+            
+            widgets.outputDepth.setText('Depth : ' + widgets.depthEdit.text())
+            widgets.outputTx.setText('Tx Pos(x, y, z) : ' + widgets.txXEdit.text() + ', ' + widgets.txYEdit.text() + ', ' + widgets.txZEdit.text())
+            widgets.outputRx.setText('Rx Pos(x, y, z) : ' + widgets.rxXEdit.text() + ', ' + widgets.rxYEdit.text() + ', ' + widgets.rxZEdit.text())
+            widgets.outputTarget.setText('Target Pos(x, y, z) : ' + widgets.targetXEdit.text() + ', ' + widgets.targetYEdit.text() + ', ' + widgets.targetZEdit.text())
+            widgets.outputPulse.setText('Pulse(Wave Type, Cycle, CenterFreq, bandwidth) : ' + widgets.waveTypeEdit.text() +
+             ', ' + widgets.cycleEdit.text() + ', ' + widgets.centerFreqEdit.text() + ', ' + widgets.bandwidthEdit.text())
+
+            widgets.label_spec.setPixmap(QPixmap("./Spec.png").scaled(self.width(), self.height()))
+            widgets.label_soundpath.setPixmap(QPixmap("./soundpath.png").scaled(self.width(), self.height()))
+            widgets.label_wav.setPixmap(QPixmap("./wav.png").scaled(self.width(), self.height()))
+            widgets.label_spec.setScaledContents(True)
+            widgets.label_soundpath.setScaledContents(True)
+            widgets.label_wav.setScaledContents(True)
+
 
         # 맵 페이지 - stack 2
         if btnName == "btn_map":

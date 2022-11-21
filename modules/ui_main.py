@@ -25,7 +25,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1280, 720)
+        MainWindow.resize(1133, 662)
         MainWindow.setMinimumSize(QSize(940, 560))
         self.styleSheet = QWidget(MainWindow)
         self.styleSheet.setObjectName(u"styleSheet")
@@ -1027,16 +1027,105 @@ class Ui_MainWindow(object):
         self.stackedWidget.addWidget(self.home)
         self.show = QWidget()
         self.show.setObjectName(u"show")
-        self.verticalLayoutWidget_2 = QWidget(self.show)
-        self.verticalLayoutWidget_2.setObjectName(u"verticalLayoutWidget_2")
-        self.verticalLayoutWidget_2.setGeometry(QRect(380, 140, 160, 80))
-        self.verticalLayout_21 = QVBoxLayout(self.verticalLayoutWidget_2)
-        self.verticalLayout_21.setObjectName(u"verticalLayout_21")
-        self.verticalLayout_21.setContentsMargins(0, 0, 0, 0)
-        self.label_3 = QLabel(self.verticalLayoutWidget_2)
-        self.label_3.setObjectName(u"label_3")
+        self.gridLayout_5 = QGridLayout(self.show)
+        self.gridLayout_5.setObjectName(u"gridLayout_5")
+        self.gridLayout_4 = QGridLayout()
+        self.gridLayout_4.setObjectName(u"gridLayout_4")
+        self.verticalLayout_4 = QVBoxLayout()
+        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
+        self.label_2 = QLabel(self.show)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setMinimumSize(QSize(100, 20))
+        self.label_2.setMaximumSize(QSize(100, 20))
 
-        self.verticalLayout_21.addWidget(self.label_3)
+        self.verticalLayout_4.addWidget(self.label_2)
+
+        self.label_wav = QLabel(self.show)
+        self.label_wav.setObjectName(u"label_wav")
+        sizePolicy3 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        sizePolicy3.setHorizontalStretch(0)
+        sizePolicy3.setVerticalStretch(0)
+        sizePolicy3.setHeightForWidth(self.label_wav.sizePolicy().hasHeightForWidth())
+        self.label_wav.setSizePolicy(sizePolicy3)
+        self.label_wav.setMinimumSize(QSize(0, 0))
+
+        self.verticalLayout_4.addWidget(self.label_wav)
+
+
+        self.gridLayout_4.addLayout(self.verticalLayout_4, 1, 1, 1, 1)
+
+        self.verticalLayout_16 = QVBoxLayout()
+        self.verticalLayout_16.setObjectName(u"verticalLayout_16")
+        self.label_4 = QLabel(self.show)
+        self.label_4.setObjectName(u"label_4")
+        self.label_4.setMinimumSize(QSize(100, 20))
+        self.label_4.setMaximumSize(QSize(100, 20))
+
+        self.verticalLayout_16.addWidget(self.label_4)
+
+        self.label_spec = QLabel(self.show)
+        self.label_spec.setObjectName(u"label_spec")
+        sizePolicy3.setHeightForWidth(self.label_spec.sizePolicy().hasHeightForWidth())
+        self.label_spec.setSizePolicy(sizePolicy3)
+        self.label_spec.setMinimumSize(QSize(0, 0))
+
+        self.verticalLayout_16.addWidget(self.label_spec)
+
+
+        self.gridLayout_4.addLayout(self.verticalLayout_16, 1, 2, 1, 1)
+
+        self.verticalLayout_18 = QVBoxLayout()
+        self.verticalLayout_18.setObjectName(u"verticalLayout_18")
+        self.label_3 = QLabel(self.show)
+        self.label_3.setObjectName(u"label_3")
+        self.label_3.setMinimumSize(QSize(100, 20))
+        self.label_3.setMaximumSize(QSize(100, 20))
+
+        self.verticalLayout_18.addWidget(self.label_3)
+
+        self.label_soundpath = QLabel(self.show)
+        self.label_soundpath.setObjectName(u"label_soundpath")
+        sizePolicy3.setHeightForWidth(self.label_soundpath.sizePolicy().hasHeightForWidth())
+        self.label_soundpath.setSizePolicy(sizePolicy3)
+        self.label_soundpath.setMinimumSize(QSize(0, 0))
+
+        self.verticalLayout_18.addWidget(self.label_soundpath)
+
+
+        self.gridLayout_4.addLayout(self.verticalLayout_18, 3, 2, 1, 1)
+
+        self.verticalLayout_19 = QVBoxLayout()
+        self.verticalLayout_19.setObjectName(u"verticalLayout_19")
+        self.outputDepth = QLabel(self.show)
+        self.outputDepth.setObjectName(u"outputDepth")
+
+        self.verticalLayout_19.addWidget(self.outputDepth)
+
+        self.outputTx = QLabel(self.show)
+        self.outputTx.setObjectName(u"outputTx")
+
+        self.verticalLayout_19.addWidget(self.outputTx)
+
+        self.outputRx = QLabel(self.show)
+        self.outputRx.setObjectName(u"outputRx")
+
+        self.verticalLayout_19.addWidget(self.outputRx)
+
+        self.outputTarget = QLabel(self.show)
+        self.outputTarget.setObjectName(u"outputTarget")
+
+        self.verticalLayout_19.addWidget(self.outputTarget)
+
+        self.outputPulse = QLabel(self.show)
+        self.outputPulse.setObjectName(u"outputPulse")
+
+        self.verticalLayout_19.addWidget(self.outputPulse)
+
+
+        self.gridLayout_4.addLayout(self.verticalLayout_19, 3, 1, 1, 1)
+
+
+        self.gridLayout_5.addLayout(self.gridLayout_4, 0, 0, 1, 1)
 
         self.stackedWidget.addWidget(self.show)
         self.widgets = QWidget()
@@ -1050,10 +1139,9 @@ class Ui_MainWindow(object):
         self.row_1.setObjectName(u"row_1")
         self.row_1.setFrameShape(QFrame.StyledPanel)
         self.row_1.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_16 = QVBoxLayout(self.row_1)
-        self.verticalLayout_16.setSpacing(0)
-        self.verticalLayout_16.setObjectName(u"verticalLayout_16")
-        self.verticalLayout_16.setContentsMargins(0, 0, 0, 0)
+        self.gridLayout_7 = QGridLayout(self.row_1)
+        self.gridLayout_7.setObjectName(u"gridLayout_7")
+        self.gridLayout_7.setContentsMargins(0, 0, 0, 0)
         self.frame_div_content_1 = QFrame(self.row_1)
         self.frame_div_content_1.setObjectName(u"frame_div_content_1")
         self.frame_div_content_1.setMinimumSize(QSize(0, 110))
@@ -1069,14 +1157,14 @@ class Ui_MainWindow(object):
         self.frame_title_wid_1.setMaximumSize(QSize(16777215, 35))
         self.frame_title_wid_1.setFrameShape(QFrame.StyledPanel)
         self.frame_title_wid_1.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_18 = QVBoxLayout(self.frame_title_wid_1)
-        self.verticalLayout_18.setObjectName(u"verticalLayout_18")
+        self.gridLayout_8 = QGridLayout(self.frame_title_wid_1)
+        self.gridLayout_8.setObjectName(u"gridLayout_8")
         self.labelBoxBlenderInstalation = QLabel(self.frame_title_wid_1)
         self.labelBoxBlenderInstalation.setObjectName(u"labelBoxBlenderInstalation")
         self.labelBoxBlenderInstalation.setFont(font)
         self.labelBoxBlenderInstalation.setStyleSheet(u"")
 
-        self.verticalLayout_18.addWidget(self.labelBoxBlenderInstalation)
+        self.gridLayout_8.addWidget(self.labelBoxBlenderInstalation, 0, 0, 1, 1)
 
 
         self.verticalLayout_17.addWidget(self.frame_title_wid_1)
@@ -1085,27 +1173,25 @@ class Ui_MainWindow(object):
         self.frame_content_wid_1.setObjectName(u"frame_content_wid_1")
         self.frame_content_wid_1.setFrameShape(QFrame.NoFrame)
         self.frame_content_wid_1.setFrameShadow(QFrame.Raised)
-        self.layoutWidget = QWidget(self.frame_content_wid_1)
-        self.layoutWidget.setObjectName(u"layoutWidget")
-        self.layoutWidget.setGeometry(QRect(10, 10, 1141, 55))
-        self.gridLayout = QGridLayout(self.layoutWidget)
+        self.gridLayout_9 = QGridLayout(self.frame_content_wid_1)
+        self.gridLayout_9.setObjectName(u"gridLayout_9")
+        self.gridLayout = QGridLayout()
         self.gridLayout.setObjectName(u"gridLayout")
-        self.gridLayout.setContentsMargins(0, 0, 0, 0)
-        self.areaEdit = QLineEdit(self.layoutWidget)
+        self.areaEdit = QLineEdit(self.frame_content_wid_1)
         self.areaEdit.setObjectName(u"areaEdit")
         self.areaEdit.setMinimumSize(QSize(0, 30))
         self.areaEdit.setStyleSheet(u"background-color: rgb(33, 37, 43);")
 
         self.gridLayout.addWidget(self.areaEdit, 0, 0, 1, 1)
 
-        self.areaEdit_2 = QLineEdit(self.layoutWidget)
+        self.areaEdit_2 = QLineEdit(self.frame_content_wid_1)
         self.areaEdit_2.setObjectName(u"areaEdit_2")
         self.areaEdit_2.setMinimumSize(QSize(0, 30))
         self.areaEdit_2.setStyleSheet(u"background-color: rgb(33, 37, 43);")
 
         self.gridLayout.addWidget(self.areaEdit_2, 0, 1, 1, 1)
 
-        self.settingBtn = QPushButton(self.layoutWidget)
+        self.settingBtn = QPushButton(self.frame_content_wid_1)
         self.settingBtn.setObjectName(u"settingBtn")
         self.settingBtn.setMinimumSize(QSize(150, 30))
         self.settingBtn.setFont(font)
@@ -1117,7 +1203,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.settingBtn, 0, 2, 1, 1)
 
-        self.currentArea = QLabel(self.layoutWidget)
+        self.currentArea = QLabel(self.frame_content_wid_1)
         self.currentArea.setObjectName(u"currentArea")
         self.currentArea.setMinimumSize(QSize(0, 17))
         self.currentArea.setStyleSheet(u"color: rgb(113, 126, 149);")
@@ -1127,10 +1213,13 @@ class Ui_MainWindow(object):
         self.gridLayout.addWidget(self.currentArea, 1, 0, 1, 1)
 
 
+        self.gridLayout_9.addLayout(self.gridLayout, 0, 0, 1, 1)
+
+
         self.verticalLayout_17.addWidget(self.frame_content_wid_1)
 
 
-        self.verticalLayout_16.addWidget(self.frame_div_content_1)
+        self.gridLayout_7.addWidget(self.frame_div_content_1, 0, 0, 1, 1)
 
 
         self.verticalLayout.addWidget(self.row_1)
@@ -1140,20 +1229,18 @@ class Ui_MainWindow(object):
         self.row_2.setMinimumSize(QSize(0, 150))
         self.row_2.setFrameShape(QFrame.StyledPanel)
         self.row_2.setFrameShadow(QFrame.Raised)
-        self.widget = QWidget(self.row_2)
-        self.widget.setObjectName(u"widget")
-        self.widget.setGeometry(QRect(11, 11, 931, 251))
-        self.gridLayout_2 = QGridLayout(self.widget)
+        self.gridLayout_10 = QGridLayout(self.row_2)
+        self.gridLayout_10.setObjectName(u"gridLayout_10")
+        self.gridLayout_2 = QGridLayout()
         self.gridLayout_2.setObjectName(u"gridLayout_2")
-        self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.txZEdit = QLineEdit(self.widget)
+        self.txZEdit = QLineEdit(self.row_2)
         self.txZEdit.setObjectName(u"txZEdit")
         self.txZEdit.setMinimumSize(QSize(0, 30))
         self.txZEdit.setStyleSheet(u"background-color: rgb(33, 37, 43);")
 
         self.gridLayout_2.addWidget(self.txZEdit, 1, 3, 1, 1, Qt.AlignHCenter|Qt.AlignVCenter)
 
-        self.txBtn = QPushButton(self.widget)
+        self.txBtn = QPushButton(self.row_2)
         self.txBtn.setObjectName(u"txBtn")
         self.txBtn.setMinimumSize(QSize(150, 30))
         self.txBtn.setFont(font)
@@ -1163,21 +1250,21 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.txBtn, 1, 4, 1, 1)
 
-        self.txYEdit = QLineEdit(self.widget)
+        self.txYEdit = QLineEdit(self.row_2)
         self.txYEdit.setObjectName(u"txYEdit")
         self.txYEdit.setMinimumSize(QSize(0, 30))
         self.txYEdit.setStyleSheet(u"background-color: rgb(33, 37, 43);")
 
         self.gridLayout_2.addWidget(self.txYEdit, 1, 2, 1, 1, Qt.AlignHCenter)
 
-        self.rxYEdit = QLineEdit(self.widget)
+        self.rxYEdit = QLineEdit(self.row_2)
         self.rxYEdit.setObjectName(u"rxYEdit")
         self.rxYEdit.setMinimumSize(QSize(0, 30))
         self.rxYEdit.setStyleSheet(u"background-color: rgb(33, 37, 43);")
 
         self.gridLayout_2.addWidget(self.rxYEdit, 3, 2, 1, 1, Qt.AlignHCenter)
 
-        self.txXEdit = QLineEdit(self.widget)
+        self.txXEdit = QLineEdit(self.row_2)
         self.txXEdit.setObjectName(u"txXEdit")
         self.txXEdit.setMinimumSize(QSize(0, 30))
         self.txXEdit.setStyleSheet(u"background-color: rgb(33, 37, 43);\n"
@@ -1185,28 +1272,28 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.txXEdit, 1, 1, 1, 1, Qt.AlignHCenter)
 
-        self.targetZEdit = QLineEdit(self.widget)
+        self.targetZEdit = QLineEdit(self.row_2)
         self.targetZEdit.setObjectName(u"targetZEdit")
         self.targetZEdit.setMinimumSize(QSize(0, 30))
         self.targetZEdit.setStyleSheet(u"background-color: rgb(33, 37, 43);")
 
         self.gridLayout_2.addWidget(self.targetZEdit, 4, 3, 1, 1, Qt.AlignHCenter)
 
-        self.rxZEdit = QLineEdit(self.widget)
+        self.rxZEdit = QLineEdit(self.row_2)
         self.rxZEdit.setObjectName(u"rxZEdit")
         self.rxZEdit.setMinimumSize(QSize(0, 30))
         self.rxZEdit.setStyleSheet(u"background-color: rgb(33, 37, 43);")
 
         self.gridLayout_2.addWidget(self.rxZEdit, 3, 3, 1, 1, Qt.AlignHCenter)
 
-        self.targetYEdit = QLineEdit(self.widget)
+        self.targetYEdit = QLineEdit(self.row_2)
         self.targetYEdit.setObjectName(u"targetYEdit")
         self.targetYEdit.setMinimumSize(QSize(0, 30))
         self.targetYEdit.setStyleSheet(u"background-color: rgb(33, 37, 43);")
 
         self.gridLayout_2.addWidget(self.targetYEdit, 4, 2, 1, 1, Qt.AlignHCenter)
 
-        self.pulseBtn = QPushButton(self.widget)
+        self.pulseBtn = QPushButton(self.row_2)
         self.pulseBtn.setObjectName(u"pulseBtn")
         self.pulseBtn.setMinimumSize(QSize(150, 30))
         self.pulseBtn.setFont(font)
@@ -1216,28 +1303,28 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.pulseBtn, 5, 4, 1, 1)
 
-        self.targetXEdit = QLineEdit(self.widget)
+        self.targetXEdit = QLineEdit(self.row_2)
         self.targetXEdit.setObjectName(u"targetXEdit")
         self.targetXEdit.setMinimumSize(QSize(0, 30))
         self.targetXEdit.setStyleSheet(u"background-color: rgb(33, 37, 43);")
 
         self.gridLayout_2.addWidget(self.targetXEdit, 4, 1, 1, 1, Qt.AlignHCenter)
 
-        self.rxXEdit = QLineEdit(self.widget)
+        self.rxXEdit = QLineEdit(self.row_2)
         self.rxXEdit.setObjectName(u"rxXEdit")
         self.rxXEdit.setMinimumSize(QSize(0, 30))
         self.rxXEdit.setStyleSheet(u"background-color: rgb(33, 37, 43);")
 
         self.gridLayout_2.addWidget(self.rxXEdit, 3, 1, 1, 1, Qt.AlignHCenter|Qt.AlignVCenter)
 
-        self.bandwidthEdit = QLineEdit(self.widget)
+        self.bandwidthEdit = QLineEdit(self.row_2)
         self.bandwidthEdit.setObjectName(u"bandwidthEdit")
         self.bandwidthEdit.setMinimumSize(QSize(0, 30))
         self.bandwidthEdit.setStyleSheet(u"background-color: rgb(33, 37, 43);")
 
         self.gridLayout_2.addWidget(self.bandwidthEdit, 5, 3, 1, 1, Qt.AlignHCenter)
 
-        self.depthBtn = QPushButton(self.widget)
+        self.depthBtn = QPushButton(self.row_2)
         self.depthBtn.setObjectName(u"depthBtn")
         self.depthBtn.setMinimumSize(QSize(150, 30))
         self.depthBtn.setFont(font)
@@ -1247,7 +1334,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.depthBtn, 0, 4, 1, 1)
 
-        self.rxBtn = QPushButton(self.widget)
+        self.rxBtn = QPushButton(self.row_2)
         self.rxBtn.setObjectName(u"rxBtn")
         self.rxBtn.setMinimumSize(QSize(150, 30))
         self.rxBtn.setFont(font)
@@ -1257,28 +1344,28 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.rxBtn, 3, 4, 1, 1)
 
-        self.depthEdit = QLineEdit(self.widget)
+        self.depthEdit = QLineEdit(self.row_2)
         self.depthEdit.setObjectName(u"depthEdit")
         self.depthEdit.setMinimumSize(QSize(0, 30))
         self.depthEdit.setStyleSheet(u"background-color: rgb(33, 37, 43);")
 
         self.gridLayout_2.addWidget(self.depthEdit, 0, 3, 1, 1, Qt.AlignHCenter)
 
-        self.centerFreqEdit = QLineEdit(self.widget)
+        self.centerFreqEdit = QLineEdit(self.row_2)
         self.centerFreqEdit.setObjectName(u"centerFreqEdit")
         self.centerFreqEdit.setMinimumSize(QSize(0, 30))
         self.centerFreqEdit.setStyleSheet(u"background-color: rgb(33, 37, 43);")
 
         self.gridLayout_2.addWidget(self.centerFreqEdit, 5, 2, 1, 1, Qt.AlignHCenter)
 
-        self.cycleEdit = QLineEdit(self.widget)
+        self.cycleEdit = QLineEdit(self.row_2)
         self.cycleEdit.setObjectName(u"cycleEdit")
         self.cycleEdit.setMinimumSize(QSize(0, 30))
         self.cycleEdit.setStyleSheet(u"background-color: rgb(33, 37, 43);")
 
         self.gridLayout_2.addWidget(self.cycleEdit, 5, 1, 1, 1, Qt.AlignHCenter)
 
-        self.targetBtn = QPushButton(self.widget)
+        self.targetBtn = QPushButton(self.row_2)
         self.targetBtn.setObjectName(u"targetBtn")
         self.targetBtn.setMinimumSize(QSize(150, 30))
         self.targetBtn.setFont(font)
@@ -1288,28 +1375,33 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.targetBtn, 4, 4, 1, 1)
 
-        self.waveTypeEdit = QLineEdit(self.widget)
+        self.waveTypeEdit = QLineEdit(self.row_2)
         self.waveTypeEdit.setObjectName(u"waveTypeEdit")
         self.waveTypeEdit.setMinimumSize(QSize(0, 30))
         self.waveTypeEdit.setStyleSheet(u"background-color: rgb(33, 37, 43);")
 
         self.gridLayout_2.addWidget(self.waveTypeEdit, 5, 0, 1, 1, Qt.AlignHCenter)
 
-        self.labelBoxBlenderInstalation_2 = QLabel(self.widget)
+        self.labelBoxBlenderInstalation_2 = QLabel(self.row_2)
         self.labelBoxBlenderInstalation_2.setObjectName(u"labelBoxBlenderInstalation_2")
         self.labelBoxBlenderInstalation_2.setFont(font)
         self.labelBoxBlenderInstalation_2.setStyleSheet(u"")
 
         self.gridLayout_2.addWidget(self.labelBoxBlenderInstalation_2, 0, 0, 1, 1)
 
+
+        self.gridLayout_10.addLayout(self.gridLayout_2, 0, 0, 1, 1)
+
         self.sendBtn = QPushButton(self.row_2)
         self.sendBtn.setObjectName(u"sendBtn")
-        self.sendBtn.setGeometry(QRect(970, 60, 181, 151))
         self.sendBtn.setMinimumSize(QSize(120, 120))
         self.sendBtn.setStyleSheet(u"background-color: rgb(52, 59, 72);")
         icon4 = QIcon()
         icon4.addFile(u":/icons/images/icons/cil-check-alt.png", QSize(), QIcon.Normal, QIcon.Off)
         self.sendBtn.setIcon(icon4)
+
+        self.gridLayout_10.addWidget(self.sendBtn, 0, 1, 1, 1)
+
 
         self.verticalLayout.addWidget(self.row_2)
 
@@ -1468,7 +1560,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1520,7 +1612,17 @@ class Ui_MainWindow(object):
         self.closeAppBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Close", None))
 #endif // QT_CONFIG(tooltip)
         self.closeAppBtn.setText("")
-        self.label_3.setText(QCoreApplication.translate("MainWindow", u"show wav, graph", None))
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"wav.png", None))
+        self.label_wav.setText(QCoreApplication.translate("MainWindow", u"wav", None))
+        self.label_4.setText(QCoreApplication.translate("MainWindow", u"spec.png", None))
+        self.label_spec.setText(QCoreApplication.translate("MainWindow", u"spec", None))
+        self.label_3.setText(QCoreApplication.translate("MainWindow", u"soundpath.png", None))
+        self.label_soundpath.setText(QCoreApplication.translate("MainWindow", u"soundpath", None))
+        self.outputDepth.setText(QCoreApplication.translate("MainWindow", u"depth :", None))
+        self.outputTx.setText(QCoreApplication.translate("MainWindow", u"Tx Pos(x, y, z) :", None))
+        self.outputRx.setText(QCoreApplication.translate("MainWindow", u"Rx Pos(x, y, z) :", None))
+        self.outputTarget.setText(QCoreApplication.translate("MainWindow", u"Target Pos(x, y, z) :", None))
+        self.outputPulse.setText(QCoreApplication.translate("MainWindow", u"Pulse :", None))
         self.labelBoxBlenderInstalation.setText(QCoreApplication.translate("MainWindow", u"\uacbd\ub85c \uc704\uce58 \ubcc0\uacbd", None))
         self.areaEdit.setText("")
         self.areaEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"\uc88c\ud45c \uc785\ub825(\uc704\ub3c4)", None))

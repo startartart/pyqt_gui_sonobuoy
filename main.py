@@ -18,6 +18,7 @@ import sys
 import os
 import platform
 import requests
+import config
 
 # IMPORT / GUI AND MODULES AND WIDGETS
 # ///////////////////////////////////////////////////////////////
@@ -140,7 +141,7 @@ class MainWindow(QMainWindow):
         # 맵 좌표 이동시키기 - stack 1 function 1
         if btnName == "settingBtn":
             BASE_URL = 'https://maps.googleapis.com/maps/api/staticmap?'
-            API_KEY  = 'AIzaSyCHWLALETpUW1cVZhMG5Z_1LKS86DpcvI8'
+            API_KEY  = config.api_key
             POS = widgets.areaEdit.text() + ',' + widgets.areaEdit_2.text()
             URL = (BASE_URL 
             + f'center={POS}'

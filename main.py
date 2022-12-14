@@ -46,9 +46,17 @@ class MainWindow(QMainWindow):
         self.txSave = {}
         self.rxSave = {}
         self.targetSave = {}
-        widgets.currentArea.setText('현재 좌표 : (37.5666805, 126.9784147 )')
+        self.checking_option = 0
+
+        widgets.horizontalScrollBar_Target.setValue(0)
+        widgets.horizontalScrollBar_Tx.setValue(0)
+        widgets.horizontalScrollBar_Rx.setValue(0)
+        widgets.horizontalScrollBar_Target.valueChanged.connect(self.checkScroll)
+        widgets.horizontalScrollBar_Tx.valueChanged.connect(self.checkScroll)
+        widgets.horizontalScrollBar_Rx.valueChanged.connect(self.checkScroll)
 
         widgets.label.setPixmap(QPixmap("./images/images/picture.png"))
+        widgets.passive_btn.setChecked(True)
 
         # USE CUSTOM TITLE BAR | USE AS "False" FOR MAC OR LINUX
         # ///////////////////////////////////////////////////////////////
@@ -78,11 +86,9 @@ class MainWindow(QMainWindow):
         # ///////////////////////////////////////////////////////////////
 
         # LEFT MENUS
+        widgets.btn_home.clicked.connect(self.buttonClick) # main page - stack0
+
         widgets.btn_setting.clicked.connect(self.buttonClick) # param setting layout - stack1
-        widgets.settingBtn.clicked.connect(self.buttonClick) # 좌표 이동 - function1
-        widgets.txBtn.clicked.connect(self.buttonClick) # tx 라벨 생성 - function2
-        widgets.rxBtn.clicked.connect(self.buttonClick) # rx 라벨 생성 - function2
-        widgets.targetBtn.clicked.connect(self.buttonClick) # target 라벨 생성 - function2
         widgets.sendBtn.clicked.connect(self.buttonClick) # 파라미터 전송 - function3
 
         widgets.btn_map.clicked.connect(self.buttonClick) # map layout - stack2
@@ -90,6 +96,14 @@ class MainWindow(QMainWindow):
         widgets.btn_kill.clicked.connect(self.buttonClick) # 라벨 지우기 - function2
 
         widgets.btn_information.clicked.connect(self.buttonClick) # wav, graph layout - stack3
+
+        widgets.btn_index.clicked.connect(self.buttonClick) # index layout - stack4
+        widgets.btn_index_2.clicked.connect(self.buttonClick) # index layout - stack5
+        widgets.btn_index_3.clicked.connect(self.buttonClick) # index layout - stack6
+        widgets.btn_index_4.clicked.connect(self.buttonClick) # index layout - stack7
+
+        widgets.active_btn.clicked.connect(self.checkRadio)
+        widgets.passive_btn.clicked.connect(self.checkRadio)
         
         # EXTRA LEFT BOX
         def openCloseLeftBox():
@@ -121,15 +135,38 @@ class MainWindow(QMainWindow):
         # SET HOME PAGE AND SELECT MENU
         # ///////////////////////////////////////////////////////////////
         widgets.stackedWidget.setCurrentWidget(widgets.home)
-        widgets.btn_map.setStyleSheet(UIFunctions.selectMenu(widgets.btn_map.styleSheet()))
+        widgets.btn_home.setStyleSheet(UIFunctions.selectMenu(widgets.btn_home.styleSheet()))
 
     # BUTTONS CLICK
     # Post here your functions for clicked buttons
     # ///////////////////////////////////////////////////////////////
+
+    def checkRadio(self):
+        if widgets.active_btn.isChecked():
+            self.checking_option = 1
+            widgets.active_or_passive_setting.setCurrentWidget(widgets.active_page)
+        else:
+            self.checking_option = 0
+            widgets.active_or_passive_setting.setCurrentWidget(widgets.passive_page)
+    
+    def checkScroll(self):
+        widgets.Target_depth_value.setText("Target " + str(widgets.horizontalScrollBar_Target.value()))
+        widgets.Tx_depth_value.setText("Tx " + str(widgets.horizontalScrollBar_Tx.value()))
+        widgets.Rx_depth_value.setText("Rx " + str(widgets.horizontalScrollBar_Rx.value()))
+        
     def buttonClick(self):
         # GET BUTTON CLICKED
         btn = self.sender()
         btnName = btn.objectName()
+
+        # 메인 홈 페이지 - stack 0
+        if btnName == "btn_home":
+            widgets.stackedWidget.setCurrentWidget(widgets.home)
+            UIFunctions.resetStyle(self, btnName)
+            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
+
+            self.labelSetHidden()
+
 
         # 설정 페이지 - stack 1
         if btnName == "btn_setting":
@@ -140,23 +177,23 @@ class MainWindow(QMainWindow):
             self.labelSetHidden()
 
         # 맵 좌표 이동시키기 - stack 1 function 1
-        if btnName == "settingBtn":
-            BASE_URL = 'https://maps.googleapis.com/maps/api/staticmap?'
-            API_KEY  = config.api_key
-            POS = widgets.areaEdit.text() + ',' + widgets.areaEdit_2.text()
-            URL = (BASE_URL 
-            + f'center={POS}'
-            + f'&zoom=6'
-            + f'&size={1200}x{800}&scale=2'
-            + f'&maptype=satellite'
-            + f'&key={API_KEY}')
+        # if btnName == "settingBtn":
+        #     BASE_URL = 'https://maps.googleapis.com/maps/api/staticmap?'
+        #     API_KEY  = config.api_key
+        #     POS = widgets.areaEdit.text() + ',' + widgets.areaEdit_2.text()
+        #     URL = (BASE_URL 
+        #     + f'center={POS}'
+        #     + f'&zoom=6'
+        #     + f'&size={1200}x{800}&scale=2'
+        #     + f'&maptype=satellite'
+        #     + f'&key={API_KEY}')
             
-            r = requests.get(URL)
-            file = open("./images/images/picture2.png","wb")
-            file.write(r.content)
-            file.close()
-            widgets.label.setPixmap(QPixmap("./images/images/picture2.png"))
-            widgets.currentArea.setText('현재 좌표 : (' + widgets.areaEdit.text() + ',' + widgets.areaEdit_2.text() + ')')
+        #     r = requests.get(URL)
+        #     file = open("./images/images/picture2.png","wb")
+        #     file.write(r.content)
+        #     file.close()
+        #     widgets.label.setPixmap(QPixmap("./images/images/picture2.png"))
+        #     widgets.currentArea.setText('현재 좌표 : (' + widgets.areaEdit.text() + ',' + widgets.areaEdit_2.text() + ')')
 
         # tx, rx, target 파라미터 전송과 맵 표시 - stack 1 function 2
         if btnName == "txBtn":
@@ -200,27 +237,37 @@ class MainWindow(QMainWindow):
 
         # 파라미터 보내기 - stack 1 function 3
         if btnName == "sendBtn":
-            self.paramList = {
-            'depth': widgets.depthEdit.text(), 'tx' :[widgets.txXEdit.text(), widgets.txYEdit.text(), widgets.txZEdit.text()], 'rx': [widgets.rxXEdit.text(), widgets.rxYEdit.text(), widgets.rxZEdit.text()],
-            'target': [widgets.targetXEdit.text(), widgets.targetYEdit.text(), widgets.targetZEdit.text()],
-            'waveType': widgets.waveTypeEdit.text(), 'cycle': widgets.cycleEdit.text(), 'centerFreq': widgets.centerFreqEdit.text(), 'bandwidth': widgets.bandwidthEdit.text()
-            }
-            generate.main(self.paramList)
-            
-            widgets.outputDepth.setText('Depth : ' + widgets.depthEdit.text())
-            widgets.outputTx.setText('Tx Pos(x, y, z) : ' + widgets.txXEdit.text() + ', ' + widgets.txYEdit.text() + ', ' + widgets.txZEdit.text())
-            widgets.outputRx.setText('Rx Pos(x, y, z) : ' + widgets.rxXEdit.text() + ', ' + widgets.rxYEdit.text() + ', ' + widgets.rxZEdit.text())
-            widgets.outputTarget.setText('Target Pos(x, y, z) : ' + widgets.targetXEdit.text() + ', ' + widgets.targetYEdit.text() + ', ' + widgets.targetZEdit.text())
-            widgets.outputPulse.setText('Pulse(Wave Type, Cycle, CenterFreq, bandwidth) : ' + widgets.waveTypeEdit.text() +
-             ', ' + widgets.cycleEdit.text() + ', ' + widgets.centerFreqEdit.text() + ', ' + widgets.bandwidthEdit.text())
+            if self.checking_option == 0:
+                self.paramList = {
+                'tx' :[self.txSave['posX'], self.txSave['posY'], widgets.horizontalScrollBar_Tx.value()],
+                'rx' :[self.rxSave['posX'], self.rxSave['posY'], widgets.horizontalScrollBar_Rx.value()],
+                'target' :[self.targetSave['posX'], self.targetSave['posY'], widgets.horizontalScrollBar_Target.value()],
+                'type' : widgets.passive_type_edit.text(), 'centerFreq' : widgets.passive_freq_edit.text()
+                }
+                widgets.outputPulse.setText('Pulse(Passive) type :' + widgets.passive_type_edit.text() + ', centerfrequncy :' + widgets.passive_freq_edit.text())
+            else:
+                self.paramList = {
+                'tx' :[self.txSave['posX'], self.txSave['posY'], widgets.horizontalScrollBar_Tx.value()],
+                'rx' :[self.rxSave['posX'], self.rxSave['posY'], widgets.horizontalScrollBar_Rx.value()],
+                'target' :[self.targetSave['posX'], self.targetSave['posY'], widgets.horizontalScrollBar_Target.value()],
+                'type' : widgets.active_type_edit.text(), 'centerFreq' : widgets.active_freq_edit.text(),
+                'pulse' : widgets.active_pulse_edit.text(), 'bandwidth' : widgets.active_band_edit.text()
+                }
+                widgets.outputPulse.setText('Pulse(Active) type :' + widgets.active_type_edit.text() + ', centerfrequncy :' + widgets.active_freq_edit.text() + ', pulse :' + widgets.active_pulse_edit.text() + ', bandwidth :' + widgets.active_band_edit.text())
+            print(self.paramList)
 
-            widgets.label_spec.setPixmap(QPixmap("./Spec.png").scaled(self.width(), self.height()))
-            widgets.label_soundpath.setPixmap(QPixmap("./soundpath.png").scaled(self.width(), self.height()))
-            widgets.label_wav.setPixmap(QPixmap("./wav.png").scaled(self.width(), self.height()))
-            widgets.label_spec.setScaledContents(True)
-            widgets.label_soundpath.setScaledContents(True)
-            widgets.label_wav.setScaledContents(True)
+            # generate.main(self.paramList)
 
+            widgets.outputTx.setText('Tx Pos(x, y, z) : ' + str(self.txSave['posX']) + ', ' + str(self.txSave['posY']) + ', ' + str(widgets.horizontalScrollBar_Tx.value()))
+            widgets.outputRx.setText('Rx Pos(x, y, z) : ' + str(self.rxSave['posX']) + ', ' + str(self.rxSave['posY']) + ', ' + str(widgets.horizontalScrollBar_Rx.value()))
+            widgets.outputTarget.setText('Target Pos(x, y, z) : ' + str(self.targetSave['posX']) + ', ' + str(self.targetSave['posY']) + ', ' + str(widgets.horizontalScrollBar_Target.value()))
+
+            # widgets.label_spec.setPixmap(QPixmap("./Spec.png").scaled(self.width(), self.height()))
+            # widgets.label_soundpath.setPixmap(QPixmap("./soundpath.png").scaled(self.width(), self.height()))
+            # widgets.label_wav.setPixmap(QPixmap("./wav.png").scaled(self.width(), self.height()))
+            # widgets.label_spec.setScaledContents(True)
+            # widgets.label_soundpath.setScaledContents(True)
+            # widgets.label_wav.setScaledContents(True)
 
         # 맵 페이지 - stack 2
         if btnName == "btn_map":
@@ -272,6 +319,38 @@ class MainWindow(QMainWindow):
             UIFunctions.resetStyle(self, btnName)
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
             widgets.btn_information.setEnabled(True)
+            
+            self.labelSetHidden()
+
+        if btnName == "btn_index":
+            widgets.stackedWidget.setCurrentWidget(widgets.plot1_page)
+            UIFunctions.resetStyle(self, btnName)
+            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
+            widgets.btn_index.setEnabled(True)
+            
+            self.labelSetHidden()
+
+        if btnName == "btn_index_2":
+            widgets.stackedWidget.setCurrentWidget(widgets.plot2_page)
+            UIFunctions.resetStyle(self, btnName)
+            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
+            widgets.btn_index_2.setEnabled(True)
+            
+            self.labelSetHidden()
+        
+        if btnName == "btn_index_3":
+            widgets.stackedWidget.setCurrentWidget(widgets.plot3_page)
+            UIFunctions.resetStyle(self, btnName)
+            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
+            widgets.btn_index_3.setEnabled(True)
+            
+            self.labelSetHidden()
+
+        if btnName == "btn_index_4":
+            widgets.stackedWidget.setCurrentWidget(widgets.plot4_page)
+            UIFunctions.resetStyle(self, btnName)
+            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
+            widgets.btn_index_4.setEnabled(True)
             
             self.labelSetHidden()
 

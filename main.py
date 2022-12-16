@@ -43,9 +43,9 @@ class MainWindow(QMainWindow):
         widgets = self.ui
         self.frimestate = 0
         self.previous_run = []
-        self.txSave = {}
-        self.rxSave = {}
-        self.targetSave = {}
+        self.txSave = {'posX': 0, 'posY': 0}
+        self.rxSave = {'posX': 0, 'posY': 0}
+        self.targetSave = {'posX': 0, 'posY': 0}
         self.checking_option = 0
 
         widgets.horizontalScrollBar_Target.setValue(0)
@@ -58,6 +58,7 @@ class MainWindow(QMainWindow):
         widgets.label.setPixmap(QPixmap("./images/images/picture.png"))
         widgets.passive_btn.setChecked(True)
 
+        widgets.active_or_passive_setting.setCurrentWidget(widgets.passive_page)
         # USE CUSTOM TITLE BAR | USE AS "False" FOR MAC OR LINUX
         # ///////////////////////////////////////////////////////////////
         Settings.ENABLE_CUSTOM_TITLE_BAR = True
@@ -141,6 +142,7 @@ class MainWindow(QMainWindow):
     # Post here your functions for clicked buttons
     # ///////////////////////////////////////////////////////////////
 
+    # Active or Passive setting
     def checkRadio(self):
         if widgets.active_btn.isChecked():
             self.checking_option = 1
@@ -149,6 +151,7 @@ class MainWindow(QMainWindow):
             self.checking_option = 0
             widgets.active_or_passive_setting.setCurrentWidget(widgets.passive_page)
     
+    # tx, rx, target scroll bar - z pos
     def checkScroll(self):
         widgets.Target_depth_value.setText("Target " + str(widgets.horizontalScrollBar_Target.value()))
         widgets.Tx_depth_value.setText("Tx " + str(widgets.horizontalScrollBar_Tx.value()))
@@ -159,7 +162,7 @@ class MainWindow(QMainWindow):
         btn = self.sender()
         btnName = btn.objectName()
 
-        # 메인 홈 페이지 - stack 0
+        # 메인 홈 페이지
         if btnName == "btn_home":
             widgets.stackedWidget.setCurrentWidget(widgets.home)
             UIFunctions.resetStyle(self, btnName)
@@ -168,7 +171,7 @@ class MainWindow(QMainWindow):
             self.labelSetHidden()
 
 
-        # 설정 페이지 - stack 1
+        # 설정 페이지
         if btnName == "btn_setting":
             widgets.stackedWidget.setCurrentWidget(widgets.widgets)
             UIFunctions.resetStyle(self, btnName)
@@ -196,46 +199,46 @@ class MainWindow(QMainWindow):
         #     widgets.currentArea.setText('현재 좌표 : (' + widgets.areaEdit.text() + ',' + widgets.areaEdit_2.text() + ')')
 
         # tx, rx, target 파라미터 전송과 맵 표시 - stack 1 function 2
-        if btnName == "txBtn":
-            if self.txSave:
-                self.txSave['label'].close()
-                self.txSave.clear()
+        # if btnName == "txBtn":
+        #     if self.txSave['label']:
+        #         self.txSave['label'].close()
+        #         self.txSave.clear()
 
-            self.label = QLabel(self)
-            self.label.setGeometry(int(widgets.txXEdit.text()), int(widgets.txYEdit.text()), 16, 16)
-            pixmap = QPixmap("./images/icons/cil-cursor.png")
-            self.label.setPixmap(pixmap)
-            self.txSave = {'label':self.label, 'posX':int(widgets.txXEdit.text()), 'posY':int(widgets.txYEdit.text())}
-            self.label.show()
-            self.label.close()
+        #     self.label = QLabel(self)
+        #     self.label.setGeometry(int(widgets.txXEdit.text()), int(widgets.txYEdit.text()), 16, 16)
+        #     pixmap = QPixmap("./images/icons/cil-cursor.png")
+        #     self.label.setPixmap(pixmap)
+        #     self.txSave = {'label':self.label, 'posX':int(widgets.txXEdit.text()), 'posY':int(widgets.txYEdit.text())}
+        #     self.label.show()
+        #     self.label.close()
 
-        if btnName == "rxBtn":
-            if self.rxSave:
-                self.rxSave['label'].close()
-                self.rxSave.clear()
+        # if btnName == "rxBtn":
+        #     if self.rxSave['label']:
+        #         self.rxSave['label'].close()
+        #         self.rxSave.clear()
 
-            self.label = QLabel(self)
-            self.label.setGeometry(int(widgets.rxXEdit.text()), int(widgets.rxYEdit.text()), 16, 16)
-            pixmap = QPixmap("./images/icons/cil-wifi-signal-4.png")
-            self.label.setPixmap(pixmap)
-            self.rxSave = {'label':self.label, 'posX':int(widgets.rxXEdit.text()), 'posY':int(widgets.rxYEdit.text())}
-            self.label.show()
-            self.label.close()
+        #     self.label = QLabel(self)
+        #     self.label.setGeometry(int(widgets.rxXEdit.text()), int(widgets.rxYEdit.text()), 16, 16)
+        #     pixmap = QPixmap("./images/icons/cil-wifi-signal-4.png")
+        #     self.label.setPixmap(pixmap)
+        #     self.rxSave = {'label':self.label, 'posX':int(widgets.rxXEdit.text()), 'posY':int(widgets.rxYEdit.text())}
+        #     self.label.show()
+        #     self.label.close()
 
-        if btnName == "targetBtn":
-            if self.targetSave:
-                self.targetSave['label'].close()
-                self.targetSave.clear()
+        # if btnName == "targetBtn":
+        #     if self.targetSave['label']:
+        #         self.targetSave['label'].close()
+        #         self.targetSave.clear()
 
-            self.label = QLabel(self)
-            self.label.setGeometry(int(widgets.targetXEdit.text()), int(widgets.targetYEdit.text()), 16, 16)
-            pixmap = QPixmap("./images/icons/cil-wifi-signal-0.png")
-            self.label.setPixmap(pixmap)
-            self.targetSave = {'label':self.label, 'posX':int(widgets.targetXEdit.text()), 'posY':int(widgets.targetYEdit.text())}
-            self.label.show()
-            self.label.close()
+        #     self.label = QLabel(self)
+        #     self.label.setGeometry(int(widgets.targetXEdit.text()), int(widgets.targetYEdit.text()), 16, 16)
+        #     pixmap = QPixmap("./images/icons/cil-wifi-signal-0.png")
+        #     self.label.setPixmap(pixmap)
+        #     self.targetSave = {'label':self.label, 'posX':int(widgets.targetXEdit.text()), 'posY':int(widgets.targetYEdit.text())}
+        #     self.label.show()
+        #     self.label.close()
 
-        # 파라미터 보내기 - stack 1 function 3
+        # 파라미터 보내기
         if btnName == "sendBtn":
             if self.checking_option == 0:
                 self.paramList = {
@@ -269,20 +272,20 @@ class MainWindow(QMainWindow):
             # widgets.label_soundpath.setScaledContents(True)
             # widgets.label_wav.setScaledContents(True)
 
-        # 맵 페이지 - stack 2
+        # 맵 페이지
         if btnName == "btn_map":
             widgets.stackedWidget.setCurrentWidget(widgets.new_page) # SET PAGE
             UIFunctions.resetStyle(self, btnName) # RESET ANOTHERS BUTTONS SELECTED
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet())) # SELECT MENU
             widgets.btn_widgets.setEnabled(True)
-            if self.txSave:
+            if 'label' in self.txSave:
                 self.txSave['label'].setHidden(False)
-            if self.rxSave:
+            if 'label' in self.rxSave:
                 self.rxSave['label'].setHidden(False)
-            if self.targetSave:
+            if 'label' in self.targetSave:
                 self.targetSave['label'].setHidden(False)
 
-        # 맵 페이지에 아이콘라벨 입히기 - stack 2 function 1
+        # 맵 페이지에 아이콘라벨 입히기
         if btnName == "btn_widgets":
             if self.frimestate == 1:
                 self.frimestate = 0
@@ -291,30 +294,38 @@ class MainWindow(QMainWindow):
             else:
                 self.frimestate = 1
                 widgets.btn_widgets.setStyleSheet("background-image: url(:/icons/images/icons/cil-wifi-signal-0.png);")
-                if self.txSave:
+                if 'label' in self.txSave:
                     self.txSave['label'].setHidden(False)
-                if self.rxSave:
+                if 'label' in self.rxSave:
                     self.rxSave['label'].setHidden(False)
-                if self.targetSave:
+                if 'label' in self.targetSave:
                     self.targetSave['label'].setHidden(False)
 
-        # 아이콘라벨 모두 죽이기 - stack 2 function 2
+        # 아이콘라벨 모두 죽이기
         if btnName == "btn_kill":
-            self.txSave['label'].close()
-            self.rxSave['label'].close()
-            self.targetSave['label'].close()
-            self.txSave.clear()
-            self.rxSave.clear()
-            self.targetSave.clear()
-            widgets.txXEdit.setText('')
-            widgets.txYEdit.setText('')
-            widgets.rxXEdit.setText('')
-            widgets.rxYEdit.setText('')
-            widgets.targetXEdit.setText('')
-            widgets.targetYEdit.setText('')
+            if 'label' in self.txSave:
+                self.txSave['label'].close()
+                self.txSave.clear()
+                self.txSave = {'posX': 0, 'posY': 0}
+            if 'label' in self.rxSave:
+                self.rxSave['label'].close()
+                self.rxSave.clear()
+                self.rxSave = {'posX': 0, 'posY': 0}
+            if 'label' in self.targetSave:
+                self.targetSave['label'].close()
+                self.targetSave.clear()
+                self.targetSave = {'posX': 0, 'posY': 0}
 
-        # 오디오 파일 및 그래프 변환 - stack 3
+        # 정보 확인 페이지
         if btnName == "btn_information":
+            if self.checking_option == 0:
+                widgets.outputPulse.setText('Pulse(Passive) type :' + widgets.passive_type_edit.text() + ', centerfrequncy :' + widgets.passive_freq_edit.text())
+            else:
+                widgets.outputPulse.setText('Pulse(Active) type :' + widgets.active_type_edit.text() + ', centerfrequncy :' + widgets.active_freq_edit.text() + ', pulse :' + widgets.active_pulse_edit.text() + ', bandwidth :' + widgets.active_band_edit.text())
+
+            widgets.outputTx.setText('Tx Pos(x, y, z) : ' + str(self.txSave['posX']) + ', ' + str(self.txSave['posY']) + ', ' + str(widgets.horizontalScrollBar_Tx.value()))
+            widgets.outputRx.setText('Rx Pos(x, y, z) : ' + str(self.rxSave['posX']) + ', ' + str(self.rxSave['posY']) + ', ' + str(widgets.horizontalScrollBar_Rx.value()))
+            widgets.outputTarget.setText('Target Pos(x, y, z) : ' + str(self.targetSave['posX']) + ', ' + str(self.targetSave['posY']) + ', ' + str(widgets.horizontalScrollBar_Target.value()))
             widgets.stackedWidget.setCurrentWidget(widgets.show)
             UIFunctions.resetStyle(self, btnName)
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
@@ -322,6 +333,7 @@ class MainWindow(QMainWindow):
             
             self.labelSetHidden()
 
+        # 그래프 페이지
         if btnName == "btn_index":
             widgets.stackedWidget.setCurrentWidget(widgets.plot1_page)
             UIFunctions.resetStyle(self, btnName)
@@ -363,11 +375,11 @@ class MainWindow(QMainWindow):
         widgets.btn_widgets.setStyleSheet("background-image: url(:/icons/images/icons/cil-wifi-signal-off.png);")
         widgets.btn_widgets.setDisabled(True)
 
-        if self.txSave:
+        if 'label' in self.txSave:
             self.txSave['label'].setHidden(True)
-        if self.rxSave:
+        if 'label' in self.rxSave:
             self.rxSave['label'].setHidden(True)
-        if self.targetSave:
+        if 'label' in self.targetSave:
             self.targetSave['label'].setHidden(True)
 
     def mouseMoveEvent(self, event):
@@ -392,7 +404,7 @@ class MainWindow(QMainWindow):
 
         # 마우스 좌클릭시 TX 아이콘 띄우기
         if event.buttons() == Qt.LeftButton and self.frimestate == 1:
-            if self.txSave:
+            if 'label' in self.txSave:
                 self.txSave['label'].close()
                 self.txSave.clear()
 
@@ -403,12 +415,10 @@ class MainWindow(QMainWindow):
             self.label.show()
             self.txSave = {'label':self.label, 'posX':event.pos().x(), 'posY':event.pos().y()}
             print(self.txSave)
-            widgets.txXEdit.setText(str(event.pos().x()))
-            widgets.txYEdit.setText(str(event.pos().y()))
         
         # 마우스 우클릭시 RX 아이콘 띄우기
         if event.buttons() == Qt.RightButton and self.frimestate == 1:
-            if self.rxSave:
+            if 'label' in self.rxSave:
                 self.rxSave['label'].close()
                 self.rxSave.clear()
 
@@ -418,14 +428,10 @@ class MainWindow(QMainWindow):
             self.label.setPixmap(pixmap)
             self.label.show()
             self.rxSave = {'label':self.label, 'posX':event.pos().x(), 'posY':event.pos().y()}
-            widgets.rxXEdit.setText(str(event.pos().x()))
-            widgets.rxYEdit.setText(str(event.pos().y()))
-
-        
         
         # 마우스 중간클릭시 타겟 아이콘 띄우기
         if event.buttons() == Qt.MiddleButton and self.frimestate == 1:
-            if self.targetSave:
+            if 'label' in self.targetSave:
                 self.targetSave['label'].close()
                 self.targetSave.clear()
             self.label = QLabel(self)
@@ -434,9 +440,6 @@ class MainWindow(QMainWindow):
             self.label.setPixmap(pixmap)
             self.label.show()
             self.targetSave = {'label':self.label, 'posX':event.pos().x(), 'posY':event.pos().y()}
-            widgets.targetXEdit.setText(str(event.pos().x()))
-            widgets.targetYEdit.setText(str(event.pos().y()))
-
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

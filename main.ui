@@ -7,7 +7,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1245</width>
+    <width>1088</width>
     <height>759</height>
    </rect>
   </property>
@@ -2057,7 +2057,7 @@ p, li { white-space: pre-wrap; }
                       <string notr="true">background: transparent;</string>
                      </property>
                      <property name="currentIndex">
-                      <number>3</number>
+                      <number>2</number>
                      </property>
                      <widget class="QWidget" name="home">
                       <property name="minimumSize">
@@ -2067,8 +2067,7 @@ p, li { white-space: pre-wrap; }
                        </size>
                       </property>
                       <property name="styleSheet">
-                       <string notr="true">
-</string>
+                       <string notr="true"/>
                       </property>
                       <layout class="QGridLayout" name="gridLayout_3">
                        <property name="leftMargin">
@@ -2380,7 +2379,7 @@ background-repeat: no-repeat;</string>
                           <item>
                            <widget class="QStackedWidget" name="active_or_passive_setting">
                             <property name="currentIndex">
-                             <number>0</number>
+                             <number>1</number>
                             </property>
                             <widget class="QWidget" name="active_page">
                              <layout class="QVBoxLayout" name="verticalLayout_25">
@@ -2423,22 +2422,26 @@ background-repeat: no-repeat;</string>
                                       </widget>
                                      </item>
                                      <item>
-                                      <widget class="QLineEdit" name="active_type_edit">
-                                       <property name="sizePolicy">
-                                        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                                         <horstretch>0</horstretch>
-                                         <verstretch>0</verstretch>
-                                        </sizepolicy>
-                                       </property>
+                                      <widget class="QComboBox" name="active_type_edit">
                                        <property name="maximumSize">
                                         <size>
                                          <width>100</width>
-                                         <height>50</height>
+                                         <height>16777215</height>
                                         </size>
                                        </property>
                                        <property name="styleSheet">
                                         <string notr="true">background-color: rgb(33, 37, 43);</string>
                                        </property>
+                                       <item>
+                                        <property name="text">
+                                         <string>1</string>
+                                        </property>
+                                       </item>
+                                       <item>
+                                        <property name="text">
+                                         <string>2</string>
+                                        </property>
+                                       </item>
                                       </widget>
                                      </item>
                                     </layout>
@@ -2468,16 +2471,46 @@ background-repeat: no-repeat;</string>
                                       </widget>
                                      </item>
                                      <item>
-                                      <widget class="QLineEdit" name="active_freq_edit">
+                                      <widget class="QComboBox" name="active_freq_edit">
                                        <property name="maximumSize">
                                         <size>
                                          <width>100</width>
-                                         <height>100</height>
+                                         <height>16777215</height>
                                         </size>
                                        </property>
                                        <property name="styleSheet">
                                         <string notr="true">background-color: rgb(33, 37, 43);</string>
                                        </property>
+                                       <item>
+                                        <property name="text">
+                                         <string>3500</string>
+                                        </property>
+                                       </item>
+                                       <item>
+                                        <property name="text">
+                                         <string>3600</string>
+                                        </property>
+                                       </item>
+                                       <item>
+                                        <property name="text">
+                                         <string>3700</string>
+                                        </property>
+                                       </item>
+                                       <item>
+                                        <property name="text">
+                                         <string>3800</string>
+                                        </property>
+                                       </item>
+                                       <item>
+                                        <property name="text">
+                                         <string>3900</string>
+                                        </property>
+                                       </item>
+                                       <item>
+                                        <property name="text">
+                                         <string>4000</string>
+                                        </property>
+                                       </item>
                                       </widget>
                                      </item>
                                     </layout>
@@ -2507,16 +2540,31 @@ background-repeat: no-repeat;</string>
                                       </widget>
                                      </item>
                                      <item>
-                                      <widget class="QLineEdit" name="active_pulse_edit">
+                                      <widget class="QComboBox" name="active_pulse_edit">
                                        <property name="maximumSize">
                                         <size>
                                          <width>100</width>
-                                         <height>100</height>
+                                         <height>16777215</height>
                                         </size>
                                        </property>
                                        <property name="styleSheet">
                                         <string notr="true">background-color: rgb(33, 37, 43);</string>
                                        </property>
+                                       <item>
+                                        <property name="text">
+                                         <string>0.1</string>
+                                        </property>
+                                       </item>
+                                       <item>
+                                        <property name="text">
+                                         <string>0.5</string>
+                                        </property>
+                                       </item>
+                                       <item>
+                                        <property name="text">
+                                         <string>1.0</string>
+                                        </property>
+                                       </item>
                                       </widget>
                                      </item>
                                     </layout>
@@ -2546,16 +2594,31 @@ background-repeat: no-repeat;</string>
                                       </widget>
                                      </item>
                                      <item>
-                                      <widget class="QLineEdit" name="active_band_edit">
+                                      <widget class="QComboBox" name="active_band_edit">
                                        <property name="maximumSize">
                                         <size>
                                          <width>100</width>
-                                         <height>100</height>
+                                         <height>16777215</height>
                                         </size>
                                        </property>
                                        <property name="styleSheet">
                                         <string notr="true">background-color: rgb(33, 37, 43);</string>
                                        </property>
+                                       <item>
+                                        <property name="text">
+                                         <string>400</string>
+                                        </property>
+                                       </item>
+                                       <item>
+                                        <property name="text">
+                                         <string>500</string>
+                                        </property>
+                                       </item>
+                                       <item>
+                                        <property name="text">
+                                         <string>600</string>
+                                        </property>
+                                       </item>
                                       </widget>
                                      </item>
                                     </layout>
@@ -2567,7 +2630,7 @@ background-repeat: no-repeat;</string>
                               </item>
                              </layout>
                             </widget>
-                            <widget class="QWidget" name="passive_page" native="true">
+                            <widget class="QWidget" name="passive_page">
                              <layout class="QVBoxLayout" name="verticalLayout_17">
                               <item>
                                <layout class="QVBoxLayout" name="verticalLayout_21">
@@ -2602,16 +2665,26 @@ background-repeat: no-repeat;</string>
                                       </widget>
                                      </item>
                                      <item>
-                                      <widget class="QLineEdit" name="passive_type_edit">
+                                      <widget class="QComboBox" name="passive_type_edit">
                                        <property name="maximumSize">
                                         <size>
                                          <width>100</width>
-                                         <height>50</height>
+                                         <height>16777215</height>
                                         </size>
                                        </property>
                                        <property name="styleSheet">
                                         <string notr="true">background-color: rgb(33, 37, 43);</string>
                                        </property>
+                                       <item>
+                                        <property name="text">
+                                         <string>1</string>
+                                        </property>
+                                       </item>
+                                       <item>
+                                        <property name="text">
+                                         <string>2</string>
+                                        </property>
+                                       </item>
                                       </widget>
                                      </item>
                                     </layout>
@@ -2641,16 +2714,91 @@ background-repeat: no-repeat;</string>
                                       </widget>
                                      </item>
                                      <item>
-                                      <widget class="QLineEdit" name="passive_freq_edit">
+                                      <widget class="QComboBox" name="passive_freq_edit">
                                        <property name="maximumSize">
                                         <size>
                                          <width>100</width>
-                                         <height>50</height>
+                                         <height>16777215</height>
                                         </size>
                                        </property>
                                        <property name="styleSheet">
                                         <string notr="true">background-color: rgb(33, 37, 43);</string>
                                        </property>
+                                       <item>
+                                        <property name="text">
+                                         <string>1000</string>
+                                        </property>
+                                       </item>
+                                       <item>
+                                        <property name="text">
+                                         <string>1100</string>
+                                        </property>
+                                       </item>
+                                       <item>
+                                        <property name="text">
+                                         <string>1200</string>
+                                        </property>
+                                       </item>
+                                       <item>
+                                        <property name="text">
+                                         <string>1300</string>
+                                        </property>
+                                       </item>
+                                       <item>
+                                        <property name="text">
+                                         <string>1400</string>
+                                        </property>
+                                       </item>
+                                       <item>
+                                        <property name="text">
+                                         <string>1500</string>
+                                        </property>
+                                       </item>
+                                       <item>
+                                        <property name="text">
+                                         <string>1600</string>
+                                        </property>
+                                       </item>
+                                       <item>
+                                        <property name="text">
+                                         <string>1700</string>
+                                        </property>
+                                       </item>
+                                       <item>
+                                        <property name="text">
+                                         <string>1800</string>
+                                        </property>
+                                       </item>
+                                       <item>
+                                        <property name="text">
+                                         <string>1900</string>
+                                        </property>
+                                       </item>
+                                       <item>
+                                        <property name="text">
+                                         <string>2000</string>
+                                        </property>
+                                       </item>
+                                       <item>
+                                        <property name="text">
+                                         <string>2100</string>
+                                        </property>
+                                       </item>
+                                       <item>
+                                        <property name="text">
+                                         <string>2200</string>
+                                        </property>
+                                       </item>
+                                       <item>
+                                        <property name="text">
+                                         <string>2300</string>
+                                        </property>
+                                       </item>
+                                       <item>
+                                        <property name="text">
+                                         <string>2400</string>
+                                        </property>
+                                       </item>
                                       </widget>
                                      </item>
                                     </layout>
@@ -2880,7 +3028,7 @@ background-repeat: no-repeat;</string>
                         <string>Plot 1 :시간축 + 주파수축</string>
                        </property>
                       </widget>
-                      <widget class="QWidget" name="">
+                      <widget class="QWidget" name="layoutWidget">
                        <property name="geometry">
                         <rect>
                          <x>120</x>
@@ -2906,7 +3054,7 @@ background-repeat: no-repeat;</string>
                         </item>
                        </layout>
                       </widget>
-                      <widget class="QWidget" name="">
+                      <widget class="QWidget" name="layoutWidget">
                        <property name="geometry">
                         <rect>
                          <x>530</x>

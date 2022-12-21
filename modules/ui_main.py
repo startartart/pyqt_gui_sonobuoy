@@ -15,8 +15,8 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QFrame, QGridLayout, QGroupBox,
-    QHBoxLayout, QLabel, QLineEdit, QMainWindow,
+from PySide6.QtWidgets import (QApplication, QComboBox, QFrame, QGridLayout,
+    QGroupBox, QHBoxLayout, QLabel, QMainWindow,
     QProgressBar, QPushButton, QRadioButton, QScrollBar,
     QSizePolicy, QStackedWidget, QTextEdit, QVBoxLayout,
     QWidget)
@@ -26,7 +26,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1245, 759)
+        MainWindow.resize(1088, 759)
         MainWindow.setMinimumSize(QSize(940, 560))
         self.styleSheet = QWidget(MainWindow)
         self.styleSheet.setObjectName(u"styleSheet")
@@ -1361,11 +1361,11 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_10.addWidget(self.active_type_label)
 
-        self.active_type_edit = QLineEdit(self.groupBox_7)
+        self.active_type_edit = QComboBox(self.groupBox_7)
+        self.active_type_edit.addItem("")
+        self.active_type_edit.addItem("")
         self.active_type_edit.setObjectName(u"active_type_edit")
-        sizePolicy.setHeightForWidth(self.active_type_edit.sizePolicy().hasHeightForWidth())
-        self.active_type_edit.setSizePolicy(sizePolicy)
-        self.active_type_edit.setMaximumSize(QSize(100, 50))
+        self.active_type_edit.setMaximumSize(QSize(100, 16777215))
         self.active_type_edit.setStyleSheet(u"background-color: rgb(33, 37, 43);")
 
         self.horizontalLayout_10.addWidget(self.active_type_edit)
@@ -1384,9 +1384,15 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_12.addWidget(self.active_freq_label)
 
-        self.active_freq_edit = QLineEdit(self.groupBox_7)
+        self.active_freq_edit = QComboBox(self.groupBox_7)
+        self.active_freq_edit.addItem("")
+        self.active_freq_edit.addItem("")
+        self.active_freq_edit.addItem("")
+        self.active_freq_edit.addItem("")
+        self.active_freq_edit.addItem("")
+        self.active_freq_edit.addItem("")
         self.active_freq_edit.setObjectName(u"active_freq_edit")
-        self.active_freq_edit.setMaximumSize(QSize(100, 100))
+        self.active_freq_edit.setMaximumSize(QSize(100, 16777215))
         self.active_freq_edit.setStyleSheet(u"background-color: rgb(33, 37, 43);")
 
         self.horizontalLayout_12.addWidget(self.active_freq_edit)
@@ -1405,9 +1411,12 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_11.addWidget(self.active_pulse_label)
 
-        self.active_pulse_edit = QLineEdit(self.groupBox_7)
+        self.active_pulse_edit = QComboBox(self.groupBox_7)
+        self.active_pulse_edit.addItem("")
+        self.active_pulse_edit.addItem("")
+        self.active_pulse_edit.addItem("")
         self.active_pulse_edit.setObjectName(u"active_pulse_edit")
-        self.active_pulse_edit.setMaximumSize(QSize(100, 100))
+        self.active_pulse_edit.setMaximumSize(QSize(100, 16777215))
         self.active_pulse_edit.setStyleSheet(u"background-color: rgb(33, 37, 43);")
 
         self.horizontalLayout_11.addWidget(self.active_pulse_edit)
@@ -1426,9 +1435,12 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_13.addWidget(self.active_band_label)
 
-        self.active_band_edit = QLineEdit(self.groupBox_7)
+        self.active_band_edit = QComboBox(self.groupBox_7)
+        self.active_band_edit.addItem("")
+        self.active_band_edit.addItem("")
+        self.active_band_edit.addItem("")
         self.active_band_edit.setObjectName(u"active_band_edit")
-        self.active_band_edit.setMaximumSize(QSize(100, 100))
+        self.active_band_edit.setMaximumSize(QSize(100, 16777215))
         self.active_band_edit.setStyleSheet(u"background-color: rgb(33, 37, 43);")
 
         self.horizontalLayout_13.addWidget(self.active_band_edit)
@@ -1464,9 +1476,11 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_8.addWidget(self.passive_type_label)
 
-        self.passive_type_edit = QLineEdit(self.groupBox_6)
+        self.passive_type_edit = QComboBox(self.groupBox_6)
+        self.passive_type_edit.addItem("")
+        self.passive_type_edit.addItem("")
         self.passive_type_edit.setObjectName(u"passive_type_edit")
-        self.passive_type_edit.setMaximumSize(QSize(100, 50))
+        self.passive_type_edit.setMaximumSize(QSize(100, 16777215))
         self.passive_type_edit.setStyleSheet(u"background-color: rgb(33, 37, 43);")
 
         self.horizontalLayout_8.addWidget(self.passive_type_edit)
@@ -1485,9 +1499,24 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_9.addWidget(self.passive_freq_label)
 
-        self.passive_freq_edit = QLineEdit(self.groupBox_6)
+        self.passive_freq_edit = QComboBox(self.groupBox_6)
+        self.passive_freq_edit.addItem("")
+        self.passive_freq_edit.addItem("")
+        self.passive_freq_edit.addItem("")
+        self.passive_freq_edit.addItem("")
+        self.passive_freq_edit.addItem("")
+        self.passive_freq_edit.addItem("")
+        self.passive_freq_edit.addItem("")
+        self.passive_freq_edit.addItem("")
+        self.passive_freq_edit.addItem("")
+        self.passive_freq_edit.addItem("")
+        self.passive_freq_edit.addItem("")
+        self.passive_freq_edit.addItem("")
+        self.passive_freq_edit.addItem("")
+        self.passive_freq_edit.addItem("")
+        self.passive_freq_edit.addItem("")
         self.passive_freq_edit.setObjectName(u"passive_freq_edit")
-        self.passive_freq_edit.setMaximumSize(QSize(100, 50))
+        self.passive_freq_edit.setMaximumSize(QSize(100, 16777215))
         self.passive_freq_edit.setStyleSheet(u"background-color: rgb(33, 37, 43);")
 
         self.horizontalLayout_9.addWidget(self.passive_freq_edit)
@@ -1573,7 +1602,7 @@ class Ui_MainWindow(object):
         self.horizontalScrollBar_Tx.setSizePolicy(sizePolicy)
         self.horizontalScrollBar_Tx.setStyleSheet(u" QScrollBar:vertical { background: rgb(52, 59, 72); }\n"
 " QScrollBar:horizontal { background: rgb(52, 59, 72); }")
-        self.horizontalScrollBar_Tx.setMaximum(360)
+        self.horizontalScrollBar_Tx.setMaximum(300)
         self.horizontalScrollBar_Tx.setPageStep(5)
         self.horizontalScrollBar_Tx.setOrientation(Qt.Horizontal)
 
@@ -1592,7 +1621,7 @@ class Ui_MainWindow(object):
         self.horizontalScrollBar_Rx.setSizePolicy(sizePolicy)
         self.horizontalScrollBar_Rx.setStyleSheet(u" QScrollBar:vertical { background: rgb(52, 59, 72); }\n"
 " QScrollBar:horizontal { background: rgb(52, 59, 72); }")
-        self.horizontalScrollBar_Rx.setMaximum(360)
+        self.horizontalScrollBar_Rx.setMaximum(300)
         self.horizontalScrollBar_Rx.setPageStep(5)
         self.horizontalScrollBar_Rx.setOrientation(Qt.Horizontal)
 
@@ -1611,7 +1640,7 @@ class Ui_MainWindow(object):
         self.horizontalScrollBar_Target.setSizePolicy(sizePolicy)
         self.horizontalScrollBar_Target.setStyleSheet(u" QScrollBar:vertical { background: rgb(52, 59, 72); }\n"
 " QScrollBar:horizontal { background: rgb(52, 59, 72); }")
-        self.horizontalScrollBar_Target.setMaximum(360)
+        self.horizontalScrollBar_Target.setMaximum(300)
         self.horizontalScrollBar_Target.setPageStep(5)
         self.horizontalScrollBar_Target.setOrientation(Qt.Horizontal)
 
@@ -1628,34 +1657,34 @@ class Ui_MainWindow(object):
         self.label_6 = QLabel(self.plot1_page)
         self.label_6.setObjectName(u"label_6")
         self.label_6.setGeometry(QRect(90, 50, 221, 16))
-        self.widget = QWidget(self.plot1_page)
-        self.widget.setObjectName(u"widget")
-        self.widget.setGeometry(QRect(120, 110, 80, 42))
-        self.verticalLayout_29 = QVBoxLayout(self.widget)
+        self.layoutWidget = QWidget(self.plot1_page)
+        self.layoutWidget.setObjectName(u"layoutWidget")
+        self.layoutWidget.setGeometry(QRect(120, 110, 80, 42))
+        self.verticalLayout_29 = QVBoxLayout(self.layoutWidget)
         self.verticalLayout_29.setObjectName(u"verticalLayout_29")
         self.verticalLayout_29.setContentsMargins(0, 0, 0, 0)
-        self.label_8 = QLabel(self.widget)
+        self.label_8 = QLabel(self.layoutWidget)
         self.label_8.setObjectName(u"label_8")
 
         self.verticalLayout_29.addWidget(self.label_8)
 
-        self.label_10 = QLabel(self.widget)
+        self.label_10 = QLabel(self.layoutWidget)
         self.label_10.setObjectName(u"label_10")
 
         self.verticalLayout_29.addWidget(self.label_10)
 
-        self.widget1 = QWidget(self.plot1_page)
-        self.widget1.setObjectName(u"widget1")
-        self.widget1.setGeometry(QRect(530, 100, 93, 42))
-        self.verticalLayout_30 = QVBoxLayout(self.widget1)
+        self.layoutWidget1 = QWidget(self.plot1_page)
+        self.layoutWidget1.setObjectName(u"layoutWidget1")
+        self.layoutWidget1.setGeometry(QRect(530, 100, 93, 42))
+        self.verticalLayout_30 = QVBoxLayout(self.layoutWidget1)
         self.verticalLayout_30.setObjectName(u"verticalLayout_30")
         self.verticalLayout_30.setContentsMargins(0, 0, 0, 0)
-        self.label_7 = QLabel(self.widget1)
+        self.label_7 = QLabel(self.layoutWidget1)
         self.label_7.setObjectName(u"label_7")
 
         self.verticalLayout_30.addWidget(self.label_7)
 
-        self.label_9 = QLabel(self.widget1)
+        self.label_9 = QLabel(self.layoutWidget1)
         self.label_9.setObjectName(u"label_9")
 
         self.verticalLayout_30.addWidget(self.label_9)
@@ -1666,18 +1695,18 @@ class Ui_MainWindow(object):
         self.label_11 = QLabel(self.plot2_page)
         self.label_11.setObjectName(u"label_11")
         self.label_11.setGeometry(QRect(180, 100, 221, 16))
-        self.layoutWidget = QWidget(self.plot2_page)
-        self.layoutWidget.setObjectName(u"layoutWidget")
-        self.layoutWidget.setGeometry(QRect(210, 160, 80, 42))
-        self.verticalLayout_31 = QVBoxLayout(self.layoutWidget)
+        self.layoutWidget2 = QWidget(self.plot2_page)
+        self.layoutWidget2.setObjectName(u"layoutWidget2")
+        self.layoutWidget2.setGeometry(QRect(210, 160, 80, 42))
+        self.verticalLayout_31 = QVBoxLayout(self.layoutWidget2)
         self.verticalLayout_31.setObjectName(u"verticalLayout_31")
         self.verticalLayout_31.setContentsMargins(0, 0, 0, 0)
-        self.label_12 = QLabel(self.layoutWidget)
+        self.label_12 = QLabel(self.layoutWidget2)
         self.label_12.setObjectName(u"label_12")
 
         self.verticalLayout_31.addWidget(self.label_12)
 
-        self.label_13 = QLabel(self.layoutWidget)
+        self.label_13 = QLabel(self.layoutWidget2)
         self.label_13.setObjectName(u"label_13")
 
         self.verticalLayout_31.addWidget(self.label_13)
@@ -1886,8 +1915,8 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(1)
-        self.active_or_passive_setting.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(2)
+        self.active_or_passive_setting.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1969,12 +1998,49 @@ class Ui_MainWindow(object):
         self.outputPulse.setText(QCoreApplication.translate("MainWindow", u"Pulse :", None))
         self.groupBox_7.setTitle(QCoreApplication.translate("MainWindow", u"Active", None))
         self.active_type_label.setText(QCoreApplication.translate("MainWindow", u"type", None))
+        self.active_type_edit.setItemText(0, QCoreApplication.translate("MainWindow", u"1", None))
+        self.active_type_edit.setItemText(1, QCoreApplication.translate("MainWindow", u"2", None))
+
         self.active_freq_label.setText(QCoreApplication.translate("MainWindow", u"center frequency", None))
+        self.active_freq_edit.setItemText(0, QCoreApplication.translate("MainWindow", u"3500", None))
+        self.active_freq_edit.setItemText(1, QCoreApplication.translate("MainWindow", u"3600", None))
+        self.active_freq_edit.setItemText(2, QCoreApplication.translate("MainWindow", u"3700", None))
+        self.active_freq_edit.setItemText(3, QCoreApplication.translate("MainWindow", u"3800", None))
+        self.active_freq_edit.setItemText(4, QCoreApplication.translate("MainWindow", u"3900", None))
+        self.active_freq_edit.setItemText(5, QCoreApplication.translate("MainWindow", u"4000", None))
+
         self.active_pulse_label.setText(QCoreApplication.translate("MainWindow", u"pulse duration", None))
+        self.active_pulse_edit.setItemText(0, QCoreApplication.translate("MainWindow", u"0.1", None))
+        self.active_pulse_edit.setItemText(1, QCoreApplication.translate("MainWindow", u"0.5", None))
+        self.active_pulse_edit.setItemText(2, QCoreApplication.translate("MainWindow", u"1.0", None))
+
         self.active_band_label.setText(QCoreApplication.translate("MainWindow", u"bandwitdh", None))
+        self.active_band_edit.setItemText(0, QCoreApplication.translate("MainWindow", u"400", None))
+        self.active_band_edit.setItemText(1, QCoreApplication.translate("MainWindow", u"500", None))
+        self.active_band_edit.setItemText(2, QCoreApplication.translate("MainWindow", u"600", None))
+
         self.groupBox_6.setTitle(QCoreApplication.translate("MainWindow", u"Passive", None))
         self.passive_type_label.setText(QCoreApplication.translate("MainWindow", u"type", None))
+        self.passive_type_edit.setItemText(0, QCoreApplication.translate("MainWindow", u"1", None))
+        self.passive_type_edit.setItemText(1, QCoreApplication.translate("MainWindow", u"2", None))
+
         self.passive_freq_label.setText(QCoreApplication.translate("MainWindow", u"center frequency", None))
+        self.passive_freq_edit.setItemText(0, QCoreApplication.translate("MainWindow", u"1000", None))
+        self.passive_freq_edit.setItemText(1, QCoreApplication.translate("MainWindow", u"1100", None))
+        self.passive_freq_edit.setItemText(2, QCoreApplication.translate("MainWindow", u"1200", None))
+        self.passive_freq_edit.setItemText(3, QCoreApplication.translate("MainWindow", u"1300", None))
+        self.passive_freq_edit.setItemText(4, QCoreApplication.translate("MainWindow", u"1400", None))
+        self.passive_freq_edit.setItemText(5, QCoreApplication.translate("MainWindow", u"1500", None))
+        self.passive_freq_edit.setItemText(6, QCoreApplication.translate("MainWindow", u"1600", None))
+        self.passive_freq_edit.setItemText(7, QCoreApplication.translate("MainWindow", u"1700", None))
+        self.passive_freq_edit.setItemText(8, QCoreApplication.translate("MainWindow", u"1800", None))
+        self.passive_freq_edit.setItemText(9, QCoreApplication.translate("MainWindow", u"1900", None))
+        self.passive_freq_edit.setItemText(10, QCoreApplication.translate("MainWindow", u"2000", None))
+        self.passive_freq_edit.setItemText(11, QCoreApplication.translate("MainWindow", u"2100", None))
+        self.passive_freq_edit.setItemText(12, QCoreApplication.translate("MainWindow", u"2200", None))
+        self.passive_freq_edit.setItemText(13, QCoreApplication.translate("MainWindow", u"2300", None))
+        self.passive_freq_edit.setItemText(14, QCoreApplication.translate("MainWindow", u"2400", None))
+
         self.sendBtn.setText(QCoreApplication.translate("MainWindow", u"Send \ubcf4\ub0b4\uae30", None))
         self.label.setText("")
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"SET depth", None))
@@ -2011,3 +2077,9 @@ class Ui_MainWindow(object):
         self.version.setText(QCoreApplication.translate("MainWindow", u"v1.0", None))
     # retranslateUi
 
+# Error: main.ui: Warning: The name 'layoutWidget' (QWidget) is already in use, defaulting to 'layoutWidget1'.
+
+# main.ui: Warning: The name 'layoutWidget' (QWidget) is already in use, defaulting to 'layoutWidget2'.
+
+
+# while executing 'C:\Users\user\AppData\Local\Programs\Python\Python310\Lib\site-packages\PySide6\uic -g python main.ui'

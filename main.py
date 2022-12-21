@@ -23,7 +23,7 @@ import config
 
 # IMPORT / GUI AND MODULES AND WIDGETS
 # ///////////////////////////////////////////////////////////////
-from modules import *
+from modules import *   
 from widgets import *
 os.environ["QT_FONT_DPI"] = "96" # FIX Problem for High DPI and Scale above 100%
 
@@ -245,18 +245,19 @@ class MainWindow(QMainWindow):
                 'tx' :[self.txSave['posX'], self.txSave['posY'], widgets.horizontalScrollBar_Tx.value()],
                 'rx' :[self.rxSave['posX'], self.rxSave['posY'], widgets.horizontalScrollBar_Rx.value()],
                 'target' :[self.targetSave['posX'], self.targetSave['posY'], widgets.horizontalScrollBar_Target.value()],
-                'type' : widgets.passive_type_edit.text(), 'centerFreq' : widgets.passive_freq_edit.text()
+                'type' : widgets.passive_type_edit.currentText(), 'centerFreq' : widgets.passive_freq_edit.currentText()
                 }
-                widgets.outputPulse.setText('Pulse(Passive) type :' + widgets.passive_type_edit.text() + ', centerfrequncy :' + widgets.passive_freq_edit.text())
+                widgets.outputPulse.setText('Pulse(Passive) type :' + widgets.passive_type_edit.currentText() + ', centerfrequncy :' + widgets.passive_freq_edit.currentText())
             else:
                 self.paramList = {
                 'tx' :[self.txSave['posX'], self.txSave['posY'], widgets.horizontalScrollBar_Tx.value()],
                 'rx' :[self.rxSave['posX'], self.rxSave['posY'], widgets.horizontalScrollBar_Rx.value()],
                 'target' :[self.targetSave['posX'], self.targetSave['posY'], widgets.horizontalScrollBar_Target.value()],
-                'type' : widgets.active_type_edit.text(), 'centerFreq' : widgets.active_freq_edit.text(),
-                'pulse' : widgets.active_pulse_edit.text(), 'bandwidth' : widgets.active_band_edit.text()
+                'type' : widgets.active_type_edit.currentText(), 'centerFreq' : widgets.active_freq_edit.currentText(),
+                'pulse' : widgets.active_pulse_edit.currentText(), 'bandwidth' : widgets.active_band_edit.currentText()
                 }
-                widgets.outputPulse.setText('Pulse(Active) type :' + widgets.active_type_edit.text() + ', centerfrequncy :' + widgets.active_freq_edit.text() + ', pulse :' + widgets.active_pulse_edit.text() + ', bandwidth :' + widgets.active_band_edit.text())
+                widgets.outputPulse.setText('Pulse(Active) type :' + widgets.active_type_edit.currentText() + ', centerfrequncy :' + widgets.active_freq_edit.currentText() + ', pulse :' + widgets.active_pulse_edit.currentText() + 
+                ', bandwidth :' + widgets.active_band_edit.currentText())
             print(self.paramList)
 
             # generate.main(self.paramList)
@@ -319,9 +320,10 @@ class MainWindow(QMainWindow):
         # 정보 확인 페이지
         if btnName == "btn_information":
             if self.checking_option == 0:
-                widgets.outputPulse.setText('Pulse(Passive) type :' + widgets.passive_type_edit.text() + ', centerfrequncy :' + widgets.passive_freq_edit.text())
+                widgets.outputPulse.setText('Pulse(Passive) type :' + widgets.passive_type_edit.currentText() + ', centerfrequncy :' + widgets.passive_freq_edit.currentText())
             else:
-                widgets.outputPulse.setText('Pulse(Active) type :' + widgets.active_type_edit.text() + ', centerfrequncy :' + widgets.active_freq_edit.text() + ', pulse :' + widgets.active_pulse_edit.text() + ', bandwidth :' + widgets.active_band_edit.text())
+                widgets.outputPulse.setText('Pulse(Active) type :' + widgets.active_type_edit.currentText() + ', centerfrequncy :' + widgets.active_freq_edit.currentText() + ', pulse :' 
+                + widgets.active_pulse_edit.currentText() + ', bandwidth :' + widgets.active_band_edit.currentText())
 
             widgets.outputTx.setText('Tx Pos(x, y, z) : ' + str(self.txSave['posX']) + ', ' + str(self.txSave['posY']) + ', ' + str(widgets.horizontalScrollBar_Tx.value()))
             widgets.outputRx.setText('Rx Pos(x, y, z) : ' + str(self.rxSave['posX']) + ', ' + str(self.rxSave['posY']) + ', ' + str(widgets.horizontalScrollBar_Rx.value()))
